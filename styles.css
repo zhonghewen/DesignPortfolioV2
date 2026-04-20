@@ -1,0 +1,66 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@keyframes spread {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.highlight-bar {
+  transition: width 0.25s ease;
+}
+
+.highlight-bar.active {
+  animation: spread 0.25s ease forwards;
+}
+
+#bg-panel {
+  transition: background-color 0.4s ease;
+}
+
+#project-screenshot {
+  transition: opacity 0.2s ease;
+}
+
+.project-name {
+  transition: color 0.2s ease;
+}
+
+#view-details {
+  transition: color 0.2s ease;
+}
+
+.tag-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c2c2c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  width: 250px;
+  text-align: left;
+  margin-bottom: 8px;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.tag-button {
+  position: relative;
+}
+
+.tag-button:hover .tag-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
