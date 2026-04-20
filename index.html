@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhonghe Wen</title>
+  <link rel="shortcut icon" href="images/Logo_PNG.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+    @keyframes spread {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .highlight-bar {
+      transition: width 0.25s ease;
+    }
+
+    .highlight-bar.active {
+      animation: spread 0.25s ease forwards;
+    }
+
+    #bg-panel {
+      transition: background-color 0.4s ease;
+    }
+
+    #project-screenshot {
+      transition: opacity 0.2s ease;
+    }
+
+    .project-name {
+      transition: color 0.2s ease;
+    }
+
+    #view-details {
+      transition: color 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-white h-screen overflow-hidden">
+
+  <div class="flex h-screen">
+
+    <!-- ===================== LEFT PANEL ===================== -->
+    <div class="flex flex-col justify-between shrink-0 w-[788px] pl-20 pr-9 pt-[90px] pb-12 h-full overflow-hidden">
+
+      <!-- TOP: intro + tags -->
+      <div class="flex flex-col gap-2">
+
+        <!-- ZW logo -->
+        <span style="font-family: 'Liu Jian Mao Cao', cursive; font-size: 32px;" class="text-black leading-normal">ZW</span>
+
+        <!-- Headline -->
+        <h1 class="font-bold text-black leading-tight" style="font-size: 66px; line-height: 1.1;">Hi, I'm Zhonghe!</h1>
+
+        <!-- Tagline -->
+        <p class="text-[16px] font-medium leading-normal mt-1" style="color: #4a4a4a;">
+          Designing complex enterprise workflow and high-stakes AI interaction patterns.
+        </p>
+
+        <!-- Tag pills -->
+        <div class="flex flex-wrap gap-1 mt-3">
+          <button class="border border-[#cac4d0] text-[14px] px-3 py-1.5 rounded-full font-medium hover:bg-gray-50 transition-colors cursor-default" style="color: #49454f;">
+            Scaling $8.7M+ Annual Savings
+          </button>
+          <button class="border border-[#cac4d0] text-[14px] px-3 py-1.5 rounded-full font-medium hover:bg-gray-50 transition-colors cursor-default" style="color: #49454f;">
+            Architecting Agentic Experiences
+          </button>
+          <button class="border border-[#cac4d0] text-[14px] px-3 py-1.5 rounded-full font-medium hover:bg-gray-50 transition-colors cursor-default" style="color: #49454f;">
+            Driving VP-Level Alignment
+          </button>
+        </div>
+      </div>
+
+      <!-- BOTTOM: projects + secret + actions -->
+      <div class="flex flex-col gap-5">
+
+        <!-- Projects -->
+        <div class="flex flex-col gap-4">
+          <p class="text-[16px] font-black uppercase" style="color: #4a4a4a; font-family: 'Inter', sans-serif;">Projects</p>
+          <ul id="project-list" class="flex flex-col gap-2.5 pl-4"></ul>
+        </div>
+
+        <!-- Secret -->
+        <div class="flex flex-col gap-4">
+          <p class="text-[16px] font-black uppercase" style="color: #4a4a4a; font-family: 'Inter', sans-serif;">1 secret about me</p>
+          <ul class="pl-4">
+            <li class="project-item relative inline-flex cursor-pointer py-0.5"
+                data-index="3"
+                onmouseenter="activateProject(3)">
+              <div class="highlight-bar absolute bottom-[2px] left-0 h-[14px] w-0" style="background-color: #FCF9E7; z-index: 0;"></div>
+              <span class="project-name relative z-10 text-[14px] font-medium" style="color: #4a4a4a;">0-to-1 Market Validation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-4 mt-1">
+          <a href="mailto:irena.zhonghe.wen@gmail.com"
+             class="flex items-center gap-1.5 text-white text-[14px] px-4 py-2 rounded-full"
+             style="background-color: #2c2c2c;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
+            </svg>
+            Contact
+          </a>
+          <a href="https://www.linkedin.com/in/zhonghewen/" target="_blank"
+             class="flex items-center gap-1.5 text-[14px] text-black">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="black">
+              <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17H7v-7h2v7zm-1-8a1.1 1.1 0 110-2.2A1.1 1.1 0 018 9zm10 8h-2v-3.5C16 12.7 15.3 12 14.5 12s-1.5.7-1.5 1.5V17h-2v-7h2v1a2.7 2.7 0 012.5-1c1.4 0 2.5 1.1 2.5 3V17z"/>
+            </svg>
+            Connect
+          </a>
+          <a href="images/ZhongheWen_Resume.pdf" target="_blank"
+             class="flex items-center gap-1.5 text-[14px] text-black">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v13m0 0l-4-4m4 4l4-4M3 19h18"/>
+            </svg>
+            Resume
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===================== RIGHT PANEL ===================== -->
+    <div class="relative flex-1 h-full overflow-hidden">
+
+      <!-- Colored background (right 485px) -->
+      <div id="bg-panel" class="absolute right-0 top-0 bottom-0 w-[485px]" style="background-color: #F2F7F8;"></div>
+
+      <!-- Design preview area (top ~67%) -->
+      <div class="absolute top-0 left-0 right-0 overflow-hidden" style="height: 67%;">
+        <img src="images/bg-texture.png"
+             class="absolute inset-0 w-full h-full object-cover opacity-80" alt="">
+        <img src="images/imac-mockup.png"
+             class="absolute" style="left: 67px; top: 105px; width: 520px;" alt="">
+        <img id="project-screenshot"
+             src="images/Cover_AmazonSupportFunnels.png"
+             class="absolute object-cover"
+             style="left: 91px; top: 125px; width: 470px; height: 273px; border-radius: 3px;" alt="">
+      </div>
+
+      <!-- Project details (bottom) -->
+      <div class="absolute bottom-0 right-0 w-[485px] px-7 pb-10 flex flex-col gap-4 text-right">
+        <p id="project-title"
+           class="text-[14px] font-bold uppercase tracking-wide"
+           style="color: #4a4a4a;"></p>
+
+        <div class="flex flex-col gap-1 text-left" style="color: #4a4a4a;">
+          <p id="project-desc" class="text-[12px] leading-[22px]"></p>
+          <p id="project-role" class="text-[12px] leading-[22px]"></p>
+          <p id="project-highlights" class="text-[12px] leading-[22px]"></p>
+        </div>
+
+        <a id="view-details" href="#"
+           class="text-[16px] font-black uppercase tracking-widest self-end"
+           style="color: #47799d; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+          View Details
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        id: 0,
+        brief: 'AI-Assisted Support Funnels @Amazon',
+        tags: '#Complex workflow #Building trust with AI  #Business Impact',
+        bgColor: '#F2F7F8',
+        textColor: '#47799D',
+        highlightColor: '#E2F2F5',
+        title: 'AI-Assisted Support Funnels @Amazon',
+        description: 'Designed guided interaction patterns that turned low-signal seller inputs into high-quality data for Applied Science models, delivering $8.7M in annual savings.',
+        role: 'lead UX designer',
+        highlights: '#Complex workflow #Building trust with AI  #Business Impact',
+        img: 'images/Cover_AmazonSupportFunnels.png',
+        link: 'project01.html'
+      },
+      {
+        id: 1,
+        brief: 'Agentic Support Assistant @Amazon',
+        tags: '#Conversational AI #Minimum Lovable Experience',
+        bgColor: '#EEEFF6',
+        textColor: '#54479D',
+        highlightColor: '#E5E6F0',
+        title: 'Agentic Support Assistant @Amazon',
+        description: 'Architected long-term inline seller interactions and defined the "Minimum Lovable Experience" for a 4-phased launch, transforming legacy support into an integrated multi-agent assistant.',
+        role: 'lead UX designer',
+        highlights: '#Conversational AI #Minimum Lovable Experience',
+        img: 'images/Cover_AgenticAssistant.png',
+        link: 'project02.html'
+      },
+      {
+        id: 2,
+        brief: 'Context-Aware Support Orchestration @Amazon',
+        tags: '#Complex workflows #Rapid AI Prototyping',
+        bgColor: '#F6EEF3',
+        textColor: '#9D475A',
+        highlightColor: '#EEE0EA',
+        title: 'Context-Aware Support Orchestration @Amazon',
+        description: 'Streamlined 5+ widgets into a unified flow to boost seller support productivity, using AI prototyping to accelerate concept exploration and validation.',
+        role: 'lead UX designer',
+        highlights: '#Complex workflows #Rapid AI Prototyping',
+        img: 'images/Cover_ContextAware.png',
+        link: 'project03.html'
+      }
+    ];
+
+    const secret = {
+      id: 3,
+      bgColor: '#FCF9E7',
+      textColor: '#E3AA50',
+      highlightColor: '#F5F0D8',
+      title: '0-to-1 Market Validation',
+      description: 'Coming soon.',
+      role: '',
+      highlights: '',
+      img: 'images/Zhonghe_Photo.png',
+      link: '#'
+    };
+
+    let activeId = 0;
+
+    function renderProjectList() {
+      const list = document.getElementById('project-list');
+      list.innerHTML = projects.map(p => `
+        <li class="project-item relative inline-flex cursor-pointer py-0.5"
+            data-id="${p.id}"
+            onmouseenter="activateProject(${p.id})">
+          <div class="highlight-bar absolute bottom-[2px] left-0 h-[14px] w-0" style="background-color: ${p.highlightColor}; z-index: 0;"></div>
+          <span class="project-name relative z-10 text-[14px] font-medium" style="color: #4a4a4a;">${p.brief}</span>
+          <span class="relative z-10 text-[12px] ml-1" style="color: #4a4a4a; font-weight: 400;">&nbsp;${p.tags}</span>
+        </li>
+      `).join('');
+    }
+
+    function activateProject(id) {
+      const p = id === 3 ? secret : projects.find(proj => proj.id === id);
+      if (!p) return;
+      activeId = id;
+
+      // Update right panel background
+      document.getElementById('bg-panel').style.backgroundColor = p.bgColor;
+
+      // Fade screenshot
+      const screenshot = document.getElementById('project-screenshot');
+      screenshot.style.opacity = '0';
+      setTimeout(() => {
+        screenshot.src = p.img;
+        screenshot.style.opacity = '1';
+      }, 150);
+
+      // Update project details text
+      document.getElementById('project-title').textContent = p.title;
+      document.getElementById('project-desc').textContent = p.description;
+      document.getElementById('project-role').innerHTML = p.role
+        ? `<span style="font-weight:700;">My role</span> ${p.role}` : '';
+      document.getElementById('project-highlights').innerHTML = p.highlights
+        ? `<span style="font-weight:700;">Highlights</span> ${p.highlights}` : '';
+
+      const viewDetails = document.getElementById('view-details');
+      viewDetails.style.color = p.textColor;
+      viewDetails.href = p.link;
+
+      // Update active states on all project list items
+      document.querySelectorAll('.project-item').forEach(item => {
+        const itemId = parseInt(item.dataset.id);
+        const isActive = itemId === id;
+        const activeProjColor = (itemId === 3 ? secret : projects.find(proj => proj.id === itemId))?.textColor || '#4a4a4a';
+
+        const nameEl = item.querySelector('.project-name');
+        if (nameEl) nameEl.style.color = isActive ? activeProjColor : '#4a4a4a';
+
+        const bar = item.querySelector('.highlight-bar');
+        if (bar) bar.style.width = isActive ? '100%' : '0';
+      });
+    }
+
+    renderProjectList();
+    activateProject(0);
+  </script>
+
+</body>
+</html>
