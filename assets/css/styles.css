@@ -1,3 +1,37 @@
+/* ——— page loader ——— */
+#page-loader{
+  position:fixed; inset:0; z-index:1000;
+  background:#000;
+  display:flex; align-items:center; justify-content:center;
+  transition:opacity .5s ease .1s, visibility .5s ease .1s;
+}
+#page-loader.done{
+  opacity:0; visibility:hidden; pointer-events:none;
+}
+.loader-bar{
+  position:absolute; bottom:0; left:0;
+  width:0; height:4px;
+  background:#EBCFB2;
+  animation:loaderBarGrow 4.2s ease forwards;
+}
+.loader-logo{
+  display:block; width:400px; height:auto; overflow:visible;
+}
+.lp-ghost, .lp-ink{
+  font-family:"Liu Jian Mao Cao","Caveat","Segoe Script",cursive;
+  font-size:90px;
+}
+.lp-ghost{
+  fill:none; stroke:#EBCFB2; stroke-width:0.7px; stroke-opacity:0.22;
+}
+.lp-ink{
+  fill:#EBCFB2;
+}
+#lp-rect{
+  transform-origin:0 0; transform:scaleX(0);
+}
+@keyframes loaderBarGrow{ to{ width:100%; } }
+
 :root{
   --ink: rgb(74,74,74);
   --ink-strong: rgb(0,0,0);
@@ -141,6 +175,7 @@ body{ display:flex; justify-content:center; }
 }
 .btn:hover{ background:#000; transform:translateY(-1px); }
 .btn svg{ width:16px; height:16px; stroke:#fff; fill:none; }
+.btn-contact:hover{ background:#1a1a2e; }
 
 .link{
   display:inline-flex; align-items:center; gap:6px;
@@ -149,9 +184,11 @@ body{ display:flex; justify-content:center; }
   font-family:"Helvetica Neue",sans-serif; font-size:14px; font-weight:500;
   transition:color .15s ease;
 }
-.link:hover{ color:#000; }
-.link:hover svg{ stroke:#000; }
-.link svg{ width:16px; height:16px; stroke:#222; fill:none; }
+.link svg{ width:16px; height:16px; stroke:#222; fill:none; transition:stroke .15s ease; }
+.link-connect:hover{ color:#0a66c2; }
+.link-connect:hover svg{ stroke:#0a66c2; }
+.link-resume:hover{ color:#47799d; }
+.link-resume:hover svg{ stroke:#47799d; }
 
 /* ——— right column (project detail) ——— */
 .right{
@@ -217,6 +254,10 @@ body{ display:flex; justify-content:center; }
   background:#eee7d6; background-size:cover; background-position:center;
   box-shadow:0 4px 14px rgba(0,0,0,.08);
   position:relative;
+}
+.thumb img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; pointer-events:none;
 }
 .thumb .lbl{
   position:absolute; left:8px; bottom:6px;

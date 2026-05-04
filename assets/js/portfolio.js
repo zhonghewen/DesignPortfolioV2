@@ -1,3 +1,41 @@
+/* ——— loader ——— */
+(function(){
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
+
+  /* — ink-reveal animation — */
+  const rect = document.getElementById('lp-rect');
+  if (rect) {
+    const startReveal = () => {
+      void rect.getBoundingClientRect();
+      rect.style.transition = 'transform 2.78s cubic-bezier(.25,0,.08,1)';
+      rect.style.transform  = 'scaleX(1)';
+    };
+    /* wait for the font to finish loading so the ghost outline renders correctly */
+    document.fonts.load('90px "Liu Jian Mao Cao"')
+      .then(startReveal)
+      .catch(startReveal); /* start even if font request fails */
+  }
+
+  /* — image preload — */
+  const KEY_IMAGES = [
+    'assets/images/bg-1.jpg',
+    'assets/images/imac.png',
+    'assets/images/screen-p0.png',
+    'assets/images/zhonghe.png',
+  ];
+
+  const imagesReady = Promise.all(KEY_IMAGES.map(src => new Promise(res => {
+    const img = new Image();
+    img.onload = img.onerror = res;
+    img.src = src;
+  })));
+
+  const minTime = new Promise(res => setTimeout(res, 4400));
+
+  Promise.all([imagesReady, minTime]).then(() => loader.classList.add('done'));
+})();
+
 /* ——— data ——— */
 const PROJECTS = [
   { id:0, title:"AI-Assisted Support Funnels @Amazon",
@@ -6,28 +44,28 @@ const PROJECTS = [
     desc:"Designed guided interaction patterns that turned low-signal seller inputs into high-quality data for Applied Science models, delivering $8.7M in annual savings.",
     high:"#Complex workflow  #Building trust with AI  #Business Impact",
     panel:"rgb(242,247,248)", hl:"rgba(226,242,245,1)", ink:"rgb(71,121,157)",
-    texture:"b1", scroll:0, link:"View Details  →" },
+    texture:"b1", screen:"assets/images/screen-p0.png", scroll:0, link:"View Details  →" },
   { id:1, title:"Agentic Support Assistant @Amazon",
     tags:"#Conversational AI  #Minimum Lovable Experience",
     role:"Lead UX Designer",
-    desc:"Architected long-term inline seller interactions and defined the \u201CMinimum Lovable Experience\u201D (MLE) for a 4-phased launch, transforming legacy support into an integrated multi-agent assistant.",
+    desc:"Architected long-term inline seller interactions and defined the “Minimum Lovable Experience” (MLE) for a 4-phased launch, transforming legacy support into an integrated multi-agent assistant.",
     high:"#Conversational AI  #Minimum Lovable Experience",
     panel:"rgb(238,239,246)", hl:"rgba(226,228,243,1)", ink:"rgb(84,71,157)",
-    texture:"b2", scroll:-120, link:"View Details  →" },
+    texture:"b2", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →" },
   { id:2, title:"Context-Aware Support Orchestration @Amazon",
     tags:"#Complex workflows  #Rapid AI Prototyping",
     role:"Lead UX Designer",
     desc:"Streamlined 5+ widgets into a unified flow to boost seller support productivity, using AI prototyping to accelerate concept exploration and validation.",
     high:"#Complex workflows  #Rapid AI Prototyping",
     panel:"rgb(246,238,243)", hl:"rgba(243,226,235,1)", ink:"rgb(157,71,90)",
-    texture:"b3", scroll:-260, link:"View Details  →" },
+    texture:"b3", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →" },
   { id:3, title:"Year End Dashboard @ADP",
     tags:"#Dashboard  #Business Impact",
     role:"Lead UX Designer",
     desc:"Rebuilt the year-end tax dashboard into a status-first workspace that let payroll teams resolve thousands of filings on time and unlocked measurable efficiency gains at enterprise scale.",
     high:"#Dashboard  #Business Impact",
     panel:"rgb(246,241,238)", hl:"rgba(246,235,226,1)", ink:"rgb(152,74,35)",
-    texture:"b4", scroll:-420, link:"View Details  →" },
+    texture:"b4", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →" },
 ];
 const SECRET = {
   id:4, title:"0-to-1 Market Validation",
@@ -73,7 +111,7 @@ if (mStack){
       <div class="m-preview b${isSecret ? 's' : p.id+1}">
         ${isSecret
           ? `<div class="m-photo"></div>`
-          : `<div class="m-imac"><div class="m-screen"><img src="assets/images/screen-1.png" alt="" /></div></div>`}
+          : `<div class="m-imac"><div class="m-screen"><img src="${p.screen || 'assets/images/screen-1.png'}" alt="" /></div></div>`}
       </div>
       <div class="m-body">
         <h3>${p.title}</h3>
@@ -90,6 +128,7 @@ if (mStack){
 const panel   = document.getElementById('panel');
 const texture = document.getElementById('texture');
 const scroller= document.getElementById('scroller');
+const scrollerImg = scroller?.querySelector('img');
 const right   = document.getElementById('right');
 const dTitle  = document.getElementById('d-title');
 const dRole   = document.getElementById('d-role');
@@ -125,8 +164,9 @@ function select(id){
   dLink.textContent  = data.link;
   dLink.style.color  = tint(data.ink);
 
-  if (id !== 4 && typeof data.scroll === 'number'){
-    scroller.style.transform = `translateY(${data.scroll}px)`;
+  if (id !== 4){
+    if (scrollerImg && data.screen) scrollerImg.src = data.screen;
+    if (typeof data.scroll === 'number') scroller.style.transform = `translateY(${data.scroll}px)`;
   }
 }
 
