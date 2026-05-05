@@ -44,7 +44,7 @@ const PROJECTS = [
     desc:"Designed guided interaction patterns that turned low-signal seller inputs into high-quality data for Applied Science models, delivering $8.7M in annual savings.",
     high:"#Complex workflow  #Building trust with AI  #Business Impact",
     panel:"rgb(242,247,248)", hl:"rgba(226,242,245,1)", ink:"rgb(71,121,157)",
-    texture:"b1", screen:"assets/images/screen-p0.png", scroll:0, link:"View Details  →" },
+    texture:"b1", screen:"assets/images/screen-p0.png", scroll:0, link:"View Details  →", url:"project-p0.html" },
   { id:1, title:"Agentic Support Assistant @Amazon",
     tags:"#Conversational AI  #Minimum Lovable Experience",
     role:"Lead UX Designer",
@@ -163,6 +163,7 @@ function select(id){
   dHigh.textContent  = data.high;
   dLink.textContent  = data.link;
   dLink.style.color  = tint(data.ink);
+  dLink.href         = data.url || '#';
 
   if (id !== 4){
     if (scrollerImg && data.screen) scrollerImg.src = data.screen;
@@ -180,29 +181,34 @@ function tint(rgb, isPanel){
 
 select(0);
 
-/* ——— subtitle typing animation (first landing only) ——— */
+/* ——— subtitle typing animation ——— */
 (function typeSubtitle(){
-  const full = "Designing complex enterprise workflow and high-stakes AI interaction patterns.";
-  const host = document.getElementById('subtitle');
-  const txt  = host.querySelector('.txt');
+  const full   = "Designing complex enterprise workflow and high-stakes AI interaction patterns.";
+  const host   = document.getElementById('subtitle');
+  const txt    = host.querySelector('.txt');
+  const loader = document.getElementById('page-loader');
 
-  if (sessionStorage.getItem('zw_typed') === '1'){
-    txt.textContent = full;
-    host.classList.add('done');
-    return;
+  function type() {
+    let i = 0;
+    (function tick(){
+      txt.textContent = full.slice(0, i);
+      i++;
+      if (i <= full.length) {
+        setTimeout(tick, 22 + Math.random() * 18);
+      } else {
+        setTimeout(() => host.classList.add('done'), 1200);
+      }
+    })();
   }
 
-  let i = 0;
-  (function tick(){
-    txt.textContent = full.slice(0, i);
-    i++;
-    if (i <= full.length){
-      setTimeout(tick, 22 + Math.random() * 18);
-    } else {
-      sessionStorage.setItem('zw_typed', '1');
-      setTimeout(() => host.classList.add('done'), 1200);
+  /* Start typing once the page loader finishes fading out */
+  const observer = new MutationObserver(function() {
+    if (loader.classList.contains('done')) {
+      observer.disconnect();
+      setTimeout(type, 520); /* 520ms ≈ end of the loader's 0.5s fade */
     }
-  })();
+  });
+  observer.observe(loader, { attributes: true, attributeFilter: ['class'] });
 })();
 
 /* ——— tweak hooks ——— */

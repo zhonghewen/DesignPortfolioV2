@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Assisted Support Funnels @Amazon — Zhonghe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/project.css">
+</head>
+<body id="top">
+
+  <!-- ── Nav ── -->
+  <header class="nav" id="topnav">
+    <div class="nav-inner">
+      <a href="index.html">
+        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Portfolio
+      </a>
+      <span class="nav-brand">Zw</span>
+      <nav class="nav-links">
+        <a href="#" download>
+          <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Resume
+        </a>
+        <a href="https://www.linkedin.com/in/zhonghewen" target="_blank" rel="noopener">
+          <svg class="nav-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-5M16 17v-3a2 2 0 0 0-4 0"/></svg>
+          Connect
+        </a>
+        <a href="mailto:sseinspiration@gmail.com">
+          <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 7l9 6 9-6M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"/></svg>
+          Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" style="background-image: url(assets/images/bg-1.jpg)"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid">
+        <div class="hero-mock" aria-hidden="true">
+          <div class="mock-screen">
+            <img src="assets/images/screen-p0.png" alt="">
+          </div>
+        </div>
+        <div class="hero-copy">
+          <h1>AI-Assisted Support Funnels @Amazon</h1>
+          <p class="lede">Bridging the gap between seller behavior and AI model requirements across the full support funnel — turning low-signal inputs into automated resolutions sellers actually trust.</p>
+          <dl class="hero-meta">
+            <dt>Role</dt>
+            <dt>Tool</dt>
+            <dt>Outcome</dt>
+            <dd>Lead UX Designer</dd>
+            <dd>Figma</dd>
+            <dd>~<span class="hl">$8.7M</span> in annual savings</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 01 The Problem ── -->
+    <section class="section" id="problem">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">01 / 09</div>
+        <h2>The Problem</h2>
+        <p class="sub">Low-signal inputs were breaking the AI pipeline.</p>
+      </header>
+
+      <div class="block read">
+        <p>Amazon Sellers often face complex issues. When they seek support, they frequently provide <mark>vague or incomplete</mark> information, resulting in input quality too low for <mark>automated systems to resolve</mark>.</p>
+        <p>The gap between <mark>what sellers naturally provide and what AI models</mark> actually need creates a bottleneck across the entire support funnel.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-card compare-low">
+          <div class="compare-label">Low-Signal <span>(What we received)</span></div>
+          <div class="signal-examples">
+            <span class="signal-input">"human"</span>
+            <span class="signal-input">"111"</span>
+            <span class="signal-input">"FBA"</span>
+          </div>
+          <p class="compare-note">Sellers typing vague keywords into open text fields. No actionable intent for an AI model to process — this data is noise.</p>
+        </div>
+        <div class="compare-card compare-high">
+          <div class="compare-label">High-Signal <span>(What the model needs)</span></div>
+          <div class="signal-full">
+            <div class="signal-line"><span class="signal-tag">Intent</span> Update product title</div>
+            <div class="signal-line"><span class="signal-tag">ASIN</span> B001234567</div>
+            <div class="signal-line"><span class="signal-tag">New title</span> "Laptop Backpack, for 16" laptop, lightweight, black"</div>
+          </div>
+          <p class="compare-note">A complete description with identifiers, documentation, and desired outcome — everything the model needs for confident automated resolution.</p>
+        </div>
+      </div>
+
+      <div class="block read">
+        <p style="margin-top: 24px"><strong>The Goal:</strong> Redesign the support funnel end-to-end — guiding sellers to provide the right signal, confirming their intent, and making automated execution feel safe enough to trust — without adding friction at any step.</p>
+      </div>
+    </section>
+
+    <!-- ── 02 The Opportunity ── -->
+    <section class="section alt" id="opportunity">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">02 / 09</div>
+        <h2>The Opportunity</h2>
+        <p class="sub">Treating the support journey as a conversion funnel.</p>
+      </header>
+
+      <div class="block read">
+        <p>I analyzed the end-to-end support journey as a conversion funnel. The goal was to maximize automated resolution by improving data quality at two critical stages —</p>
+        <ol class="prose-ol">
+          <li>The <strong>Intake Stage</strong> </li>
+          <li>The <strong>Clarification Stage</strong></li>
+        </ol>
+        <p>And</p>
+        <ol class="prose-ol" start="3">
+          <li>Increasing seller adoption of <strong>automated execution</strong>.</li>
+        </ol>
+      </div>
+
+      <div class="flow-diagram">
+        <a class="lightbox-trigger" href="assets/images/project1_flow.png">
+          <img src="assets/images/project1_flow.png" alt="Support flow diagram" />
+        </a>
+      </div>
+    </section>
+
+    <!-- ── 03 The Strategy ── -->
+    <section class="section" id="strategy">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">03 / 09</div>
+        <h2>The Strategy</h2>
+        <p class="sub">9 experiments. 3 defining pillars.</p>
+      </header>
+
+      <div class="block read">
+        <p>While I led 9 distinct design experiments across the support ecosystem last year, the following three represent the core strategy — each targeting a different point of signal loss in the funnel.</p>
+      </div>
+
+      <div class="exp-grid wrap">
+        <div class="exp-card">
+          <div class="exp-tag">Experiment A</div>
+          <h3>Attach Issues</h3>
+          <p>Evidence-Based Intake — shifting from descriptive text to objective evidence attached directly to the query.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-tag">Experiment B</div>
+          <h3>Rephrase Issues</h3>
+          <p>Guided Structural Refinement — replacing blank text fields with a structured "mad-libs" flow that fills model data requirements slot by slot.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-tag">Experiment C</div>
+          <h3>Automated Execution</h3>
+          <p>End-to-End Resolution — moving from instructional support to a system that performs the fix on behalf of the seller, with transparent status feedback to build trust.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 Experiment A ── -->
+    <section class="section alt" id="experiment-a">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">04 / 09</div>
+        <h2>Experiment A</h2>
+        <p class="sub">Evidence-Based Intake — from "write" to "share."</p>
+      </header>
+
+      <div class="block read">
+        <h3>The Problem: The Burden of Precision</h3>
+        <p>Sellers struggled to articulate technical problems in writing. Vague, "low-signal" descriptions failed to trigger backend models — leading to frustration and immediate human escalation.</p>
+      </div>
+
+      <div class="block read">
+        <h3>Root Cause Investigation</h3>
+        <ul class="prose-list">
+          <li><strong>3-Year Research Synthesis:</strong> Identified psychological barriers including fear of inaccuracy and identification anxiety. A dominant "Minimum Effort" behavior emerged — busy sellers avoided complex typing.</li>
+          <li><strong>1,000-Entry Production Audit:</strong> Revealed that critical signals were already present in artifacts (emails, logs, reports) sellers possessed — but they lacked a low-friction way to share them.</li>
+        </ul>
+        <p><strong>The Hypothesis:</strong> Transitioning to an evidence-first model would bypass typing friction and anxiety by capturing "ground truth" data directly from existing artifacts.</p>
+      </div>
+
+      <div class="quote-grid">
+        <blockquote class="quote-card">
+          <p>"I have the email right here from the carrier, but I don't know which part of it you need to see. I'm afraid if I type the wrong ID, my case will just be closed."</p>
+          <cite>— Amazon Seller</cite>
+        </blockquote>
+        <blockquote class="quote-card">
+          <p>"I just want it fixed. I don't have time to type out a 5-paragraph essay describing an error code you guys already have in your system. Can't I just show you a picture?"</p>
+          <cite>— Amazon Seller</cite>
+        </blockquote>
+      </div>
+
+      <div class="block read">
+        <h3>The Solution: From "Write" to "Share"</h3>
+        <ul class="prose-list">
+          <li><strong>Rich-Format Attachments:</strong> Integrated a seamless way to upload screenshots of errors or link specific system records (Shipment IDs, ASINs) early in the flow.</li>
+          <li><strong>Factual Grounding:</strong> By shifting focus from descriptive text to objective evidence, we gave AI models the "ground truth" needed for high-confidence classification.</li>
+        </ul>
+      </div>
+
+      <div class="callout-block">
+        <div class="callout-card">
+          <div class="callout-eyebrow">The Strategic Move</div>
+          <h4>Breaking the Deadlock</h4>
+          <p><strong>The Resistance:</strong> Engineering initially rejected "Attachment," citing high infrastructure costs and immature AI image-analysis tools (early 2024).</p>
+          <p><strong>The Action:</strong> I used internal tools to run a "smoke test" — demonstrating that existing L1 models could already parse metadata and autofill description fields from attachments.</p>
+          <p><strong>The Result:</strong> This proof of existing capability turned a rejected concept into a <strong>Tier-1 roadmap item</strong>.</p>
+        </div>
+      </div>
+
+      <div class="mock-placeholder">
+        <div class="mock-ph-inner">
+          <div class="mock-ph-label">UI Mockup — Old vs. New</div>
+          <div class="mock-ph-body">Mockup placeholder — to be added</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 05 Experiment B ── -->
+    <section class="section" id="experiment-b">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">05 / 09</div>
+        <h2>Experiment B</h2>
+        <p class="sub">Guided Structural Refinement — from anxiety to confidence.</p>
+      </header>
+
+      <div class="block read">
+        <h3>The Problem: The Verification Gap</h3>
+        <p>Even when sellers provided evidence, they feared the system might misinterpret their intent. Without definitive confirmation of the problem type, the model's resolution confidence remained low — and the lack of structured data created significant operational friction, causing unnecessary human escalations.</p>
+      </div>
+
+      <div class="block read">
+        <h3>The UX Challenge: Defining "Good" Data</h3>
+        <ul class="prose-list">
+          <li><strong>Synthesizing Needs:</strong> I bridged the gap between Applied Science partners (who needed specific "slots" filled like IDs and error codes) and sellers (who just wanted a fix).</li>
+          <li><strong>Strategic Iteration:</strong> I defined the "Target Description" and iterated based on what was technically feasible for the model <em>and</em> behaviorally realistic for a stressed seller.</li>
+        </ul>
+      </div>
+
+      <div class="block read">
+        <h3>The Solution: Guided Structural Scaffolding</h3>
+        <p>The "Rephrase & Prompt" interaction replaced the anxiety of writing from scratch with a guided confidence-building process — transforming a blank text field into a "mad-libs" structure where sellers only fill in the high-signal gaps the model actually needs.</p>
+      </div>
+
+      <div class="madlibs-demo">
+        <div class="madlibs-label">Before — open text field</div>
+        <div class="madlibs-before">
+          <div class="ml-input-empty">Describe your issue...</div>
+        </div>
+        <div class="madlibs-arrow">↓ &nbsp; Intent detected: "Update product listing"</div>
+        <div class="madlibs-label">After — structured prompt</div>
+        <div class="madlibs-after">
+          Update title for <span class="ml-blank">B001234567</span> to <span class="ml-blank">"Laptop Backpack, for 16" laptop, lightweight, black"</span>
+        </div>
+      </div>
+
+      <div class="callout-block">
+        <div class="callout-card">
+          <div class="callout-eyebrow">The Designer's Edge</div>
+          <h4>High-Fidelity Logic</h4>
+          <p>I didn't just design the UI — I designed the data mapping. Working with Scientists, I ensured every UI "blank" mapped directly to a required model "slot," turning the interface into a visual representation of the AI's data needs.</p>
+          <p><strong>Outcome:</strong> Eliminated "Missing Data" as a reason for failed automated resolutions.</p>
+        </div>
+      </div>
+
+      <div class="mock-placeholder">
+        <div class="mock-ph-inner">
+          <div class="mock-ph-label">Interaction Flow — The Rephrase & Refine Step</div>
+          <div class="mock-ph-body">Mockup placeholder — to be added</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 06 Experiment C ── -->
+    <section class="section alt" id="experiment-c">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">06 / 09</div>
+        <h2>Experiment C</h2>
+        <p class="sub">Automated Execution — designing trust through transparency.</p>
+      </header>
+
+      <div class="block read">
+        <h3>The Problem: Execution Error & Latency Anxiety</h3>
+        <p>Users often chose the wrong path during manual execution. Fully automating the fix introduced a "processing gap" that made users anxious — they didn't know if the system was working or had stalled.</p>
+      </div>
+
+      <div class="block read">
+        <h3>The Solution: Managing Latency to Build Trust</h3>
+        <p>We moved from "Instructional" support to "Automated Execution" — where the system performs the fix on behalf of the seller:</p>
+        <ul class="prose-list">
+          <li><strong>Verification Loop:</strong> Before execution, a "Confirmation Card" summarized the exact change about to occur — eliminating errors from misunderstood intent.</li>
+          <li><strong>Informative Status Transitions:</strong> Standard loaders were replaced with granular status updates at each processing step, so sellers always knew what the system was doing.</li>
+        </ul>
+      </div>
+
+      <div class="status-flow">
+        <div class="status-step done">
+          <div class="status-dot"></div>
+          <div class="status-text">
+            <strong>Change confirmed</strong>
+            <span>Seller reviewed and approved the exact update</span>
+          </div>
+        </div>
+        <div class="status-step active">
+          <div class="status-dot"></div>
+          <div class="status-text">
+            <strong>Verifying shipment records...</strong>
+            <span>Checking eligibility and system constraints</span>
+          </div>
+        </div>
+        <div class="status-step">
+          <div class="status-dot"></div>
+          <div class="status-text">
+            <strong>Applying update</strong>
+            <span>Writing change to backend systems</span>
+          </div>
+        </div>
+        <div class="status-step">
+          <div class="status-dot"></div>
+          <div class="status-text">
+            <strong>Complete</strong>
+            <span>Confirmation sent to seller</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout-block">
+        <div class="callout-card">
+          <div class="callout-eyebrow">The Strategic Learning</div>
+          <h4>Designing for Trust</h4>
+          <p>Users weren't impatient with the time — they were impatient with <em>the silence.</em> By designing transparent status updates, we increased user tolerance for system latency by over <strong>40%</strong>, giving the model the time it needed to safely execute complex changes.</p>
+          <p><strong>Outcome:</strong> Significant reduction in human re-contacts for the same issue.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 07 Collaboration ── -->
+    <section class="section" id="collaboration">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">07 / 09</div>
+        <h2>Collaboration</h2>
+        <p class="sub">Bridging design and applied science.</p>
+      </header>
+
+      <div class="block read">
+        <p>As Lead Product Designer, I worked in a tight feedback loop with Applied Scientists to bridge the gap between human behavior and model requirements — translating model constraints into design decisions, and observed user behaviors into data requirements the science team could operationalize.</p>
+        <p>Each experiment went through multiple rounds of joint critique, with design iterations tested against model confidence benchmarks before shipping.</p>
+      </div>
+
+      <div class="collab-loop">
+        <div class="collab-node node-design">
+          <div class="cn-icon">✦</div>
+          <strong>UX Design</strong>
+          <span>Behavior patterns, interaction flows, friction points</span>
+        </div>
+        <div class="collab-arrows">
+          <div class="ca-forward">→ Model constraints become design decisions →</div>
+          <div class="ca-back">← User behavior becomes data requirements ←</div>
+        </div>
+        <div class="collab-node node-science">
+          <div class="cn-icon">⬡</div>
+          <strong>Applied Science</strong>
+          <span>Model confidence scores, slot requirements, edge cases</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 08 Impact ── -->
+    <section class="section alt" id="impact">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">08 / 09</div>
+        <h2>Impact</h2>
+        <p class="sub">Measurable outcomes at scale.</p>
+      </header>
+
+      <div class="stats-row wrap">
+        <div class="stat">
+          <div class="n">$8.7M</div>
+          <div class="l">in annualized savings from reduced weekly support contacts</div>
+        </div>
+        <div class="stat">
+          <div class="n">1M+</div>
+          <div class="l">human escalations eliminated annually through higher automated resolution rates</div>
+        </div>
+        <div class="stat">
+          <div class="n">↑ 40%</div>
+          <div class="l">increase in user tolerance for system latency through transparent status design</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 09 Reflections ── -->
+    <section class="section" id="reflections">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">09 / 09</div>
+        <h2>Reflections</h2>
+        <p class="sub">What I learned designing at the human-AI boundary.</p>
+      </header>
+
+      <ul class="steps-list">
+        <li>
+          <span class="k">01.</span>
+          <span>
+            <span class="t">Designing for the "Lazy" User</span>
+            <span class="d">The biggest challenge wasn't the AI's capability — it was human motivation. The highest-leverage design decisions reduced effort to near zero, meeting sellers exactly where their behavior already was rather than asking them to change.</span>
+          </span>
+        </li>
+        <li>
+          <span class="k">02.</span>
+          <span>
+            <span class="t">Data as a Design Material</span>
+            <span class="d">Treating "model confidence scores" as a primary design constraint transformed how I approached interaction design. The interface became a translation layer between human intent and machine-readable data — with every UI element mapped to a model input requirement.</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ── Floating bottom nav ── -->
+  <aside class="float-nav" id="floatNav" aria-label="Section navigation">
+    <ul>
+      <li><a href="#problem" data-target="problem"><span class="num">01</span> Problem</a></li>
+      <li><a href="#opportunity" data-target="opportunity"><span class="num">02</span> Opportunity</a></li>
+      <li><a href="#strategy" data-target="strategy"><span class="num">03</span> Strategy</a></li>
+      <li><a href="#experiment-a" data-target="experiment-a"><span class="num">04</span> Exp A</a></li>
+      <li><a href="#experiment-b" data-target="experiment-b"><span class="num">05</span> Exp B</a></li>
+      <li><a href="#experiment-c" data-target="experiment-c"><span class="num">06</span> Exp C</a></li>
+      <li><a href="#collaboration" data-target="collaboration"><span class="num">07</span> Collab</a></li>
+      <li><a href="#impact" data-target="impact"><span class="num">08</span> Impact</a></li>
+      <li><a href="#reflections" data-target="reflections"><span class="num">09</span> Reflections</a></li>
+      <li class="fn-sep" aria-hidden="true"></li>
+      <li>
+        <button class="fn-top" id="toTop" aria-label="Back to top">
+          <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          Top
+        </button>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="foot-grid wrap">
+      <a class="foot-card prev" href="#">
+        <div class="foot-label"><span class="arrow">←</span> Previous</div>
+        <div class="thumb"></div>
+        <div class="foot-title">Project Name</div>
+      </a>
+      <a class="foot-home" href="index.html">
+        <div class="glyph">Zw</div>
+        <div class="lbl">All Work</div>
+      </a>
+      <a class="foot-card next" href="#">
+        <div class="foot-label">Next <span class="arrow">→</span></div>
+        <div class="thumb"></div>
+        <div class="foot-title">Project Name</div>
+      </a>
+    </div>
+  </footer>
+
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+    <img src="" alt="Full size view" />
+  </div>
+
+  <script>
+    (function () {
+      var lb  = document.getElementById('lightbox');
+      var lbImg = lb.querySelector('img');
+      document.querySelectorAll('.lightbox-trigger').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          lbImg.src = a.href;
+          lb.classList.add('open');
+        });
+      });
+      lb.addEventListener('click', function() { lb.classList.remove('open'); lbImg.src = ''; });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; }
+      });
+    })();
+    (function () {
+      var nav      = document.getElementById('topnav');
+      var floatNav = document.getElementById('floatNav');
+      var hero     = document.getElementById('hero');
+      var sections = ['problem','opportunity','strategy','experiment-a','experiment-b','experiment-c','collaboration','impact','reflections']
+                       .map(function(id){ return document.getElementById(id); });
+      var links    = Array.from(floatNav.querySelectorAll('a[data-target]'));
+
+      function onScroll() {
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        nav.classList.toggle('solid', heroBottom < 80);
+        floatNav.classList.toggle('show', heroBottom < 80);
+      }
+
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          var active = links.find(function(a){ return a.dataset.target === entry.target.id; });
+          if (active) active.classList.add('active');
+        });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+      sections.forEach(function(s){ if (s) io.observe(s); });
+
+      document.getElementById('toTop').addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var el = document.getElementById(a.dataset.target);
+          if (!el) return;
+          e.preventDefault();
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 24, behavior: 'smooth' });
+        });
+      });
+
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>
