@@ -79,22 +79,38 @@
 
       <div class="compare-grid">
         <div class="compare-card compare-low">
-          <div class="compare-label">Low-Signal <span>(What we received)</span></div>
-          <div class="signal-examples">
-            <span class="signal-input">"human"</span>
-            <span class="signal-input">"111"</span>
-            <span class="signal-input">"FBA"</span>
+          <div class="compare-header">
+            <span class="compare-eyebrow">Low-Signal · What We Received</span>
+            <span class="compare-badge compare-badge-noise">Noise</span>
           </div>
-          <p class="compare-note">Sellers typing vague keywords into open text fields. No actionable intent for an AI model to process — this data is noise.</p>
+          <h4 class="compare-title">Keywords with no actionable intent.</h4>
+          <p class="compare-desc">Sellers typing fragments into open text fields. The model can't classify, so the case escalates to a human.</p>
+          <div class="signal-examples">
+            <div class="signal-input-wrap">
+              <span class="signal-input-label">Open text field — input</span>
+              <span class="signal-input-val">"human"</span>
+            </div>
+            <div class="signal-input-wrap">
+              <span class="signal-input-label">Open text field — input</span>
+              <span class="signal-input-val">"111"</span>
+            </div>
+            <div class="signal-input-wrap">
+              <span class="signal-input-label">Open text field — input</span>
+              <span class="signal-input-val">"FBA"</span>
+            </div>
+          </div>
         </div>
         <div class="compare-card compare-high">
-          <div class="compare-label">High-Signal <span>(What the model needs)</span></div>
-          <div class="signal-full">
-            <div class="signal-line"><span class="signal-tag">Intent</span> Update product title</div>
-            <div class="signal-line"><span class="signal-tag">ASIN</span> B001234567</div>
-            <div class="signal-line"><span class="signal-tag">New title</span> "Laptop Backpack, for 16" laptop, lightweight, black"</div>
+          <div class="compare-header">
+            <span class="compare-eyebrow">High-Signal · What the Model Needs</span>
+            <span class="compare-badge compare-badge-signal">Signal</span>
           </div>
-          <p class="compare-note">A complete description with identifiers, documentation, and desired outcome — everything the model needs for confident automated resolution.</p>
+          <h4 class="compare-title">A complete, structured problem description.</h4>
+          <p class="compare-desc">Issue description + specific identifiers or supporting documentation + a desired outcome. Model-ready on the first turn.</p>
+          <div class="signal-structured">
+            <span class="signal-structured-label">Structured intent</span>
+            <p>Update product title of ASIN <strong>B001234567</strong> to "Laptop Backpack, for 16" laptop, lightweight, black".</p>
+          </div>
         </div>
       </div>
 
@@ -131,34 +147,36 @@
       </div>
     </section>
 
-    <!-- ── 03 The Strategy ── -->
+    <!-- ── 03 Selected Experiments ── -->
     <section class="section" id="strategy">
       <header class="sec-head">
         <div class="sec-rule"></div>
         <div class="idx">03 / 09</div>
-        <h2>The Strategy</h2>
-        <p class="sub">9 experiments. 3 defining pillars.</p>
+        <h2>Selected Experiments</h2>
       </header>
 
       <div class="block read">
-        <p>While I led 9 distinct design experiments across the support ecosystem last year, the following three represent the core strategy — each targeting a different point of signal loss in the funnel.</p>
+        <p>While I led <mark>9 distinct designs</mark> across the support ecosystem last year, I have selected the following <mark>three representative experiments</mark> to illustrate how I approached the problem end-to-end.</p>
       </div>
 
       <div class="exp-grid wrap">
         <div class="exp-card">
-          <div class="exp-tag">Experiment A</div>
-          <h3>Attach Issues</h3>
-          <p>Evidence-Based Intake — shifting from descriptive text to objective evidence attached directly to the query.</p>
+          <div class="exp-icon">A</div>
+          <p class="exp-eyebrow">Effortless Intake</p>
+          <h3>"Attach Issues"</h3>
+          <p>Capture ground-truth from artifacts sellers already have, instead of asking them to describe.</p>
         </div>
         <div class="exp-card">
-          <div class="exp-tag">Experiment B</div>
-          <h3>Rephrase Issues</h3>
-          <p>Guided Structural Refinement — replacing blank text fields with a structured "mad-libs" flow that fills model data requirements slot by slot.</p>
+          <div class="exp-icon">B</div>
+          <p class="exp-eyebrow">Guided Structural Refinement</p>
+          <h3>"Rephrase Issues"</h3>
+          <p>Replace blank text fields with a structured flow that fills model requirements slot by slot — turning vague intent into model-ready input.</p>
         </div>
         <div class="exp-card">
-          <div class="exp-tag">Experiment C</div>
-          <h3>Automated Execution</h3>
-          <p>End-to-End Resolution — moving from instructional support to a system that performs the fix on behalf of the seller, with transparent status feedback to build trust.</p>
+          <div class="exp-icon">C</div>
+          <p class="exp-eyebrow">Trust by Design</p>
+          <h3>"Automated Execution"</h3>
+          <p>Perform the fix on the seller's behalf — with transparent status feedback designed to build confidence in automation.</p>
         </div>
       </div>
     </section>
@@ -168,59 +186,114 @@
       <header class="sec-head">
         <div class="sec-rule"></div>
         <div class="idx">04 / 09</div>
-        <h2>Experiment A</h2>
-        <p class="sub">Evidence-Based Intake — from "write" to "share."</p>
+        <h2>Experiment A — Effortless Intake</h2>
       </header>
 
       <div class="block read">
         <h3>The Problem: The Burden of Precision</h3>
-        <p>Sellers struggled to articulate technical problems in writing. Vague, "low-signal" descriptions failed to trigger backend models — leading to frustration and immediate human escalation.</p>
+        <p>Sellers struggled to articulate technical problems in writing. They would provide "low-signal" descriptions that failed to trigger backend models, leading to frustration and immediate human escalation.</p>
       </div>
 
       <div class="block read">
-        <h3>Root Cause Investigation</h3>
-        <ul class="prose-list">
-          <li><strong>3-Year Research Synthesis:</strong> Identified psychological barriers including fear of inaccuracy and identification anxiety. A dominant "Minimum Effort" behavior emerged — busy sellers avoided complex typing.</li>
-          <li><strong>1,000-Entry Production Audit:</strong> Revealed that critical signals were already present in artifacts (emails, logs, reports) sellers possessed — but they lacked a low-friction way to share them.</li>
-        </ul>
-        <p><strong>The Hypothesis:</strong> Transitioning to an evidence-first model would bypass typing friction and anxiety by capturing "ground truth" data directly from existing artifacts.</p>
-      </div>
-
-      <div class="quote-grid">
-        <blockquote class="quote-card">
-          <p>"I have the email right here from the carrier, but I don't know which part of it you need to see. I'm afraid if I type the wrong ID, my case will just be closed."</p>
-          <cite>— Amazon Seller</cite>
-        </blockquote>
-        <blockquote class="quote-card">
-          <p>"I just want it fixed. I don't have time to type out a 5-paragraph essay describing an error code you guys already have in your system. Can't I just show you a picture?"</p>
-          <cite>— Amazon Seller</cite>
-        </blockquote>
+        <p class="process-label">UX Process: Root Cause Investigation</p>
+        <p>I conducted a two-part investigation to identify why sellers struggled to describe their issues effectively:</p>
+        <div class="finding-list">
+          <div class="finding-row">
+            <span class="finding-num">01.</span>
+            <div class="finding-body">
+              <p><strong>3-Year Research Synthesis</strong> — Identified psychological barriers including <mark>fear of inaccuracy</mark> and <mark>identification anxiety</mark>. Discovered a dominant <mark>"Minimum Effort" behavior</mark> where busy sellers avoided complex typing.</p>
+              <div class="quote-stack">
+                <blockquote class="inline-quote">
+                  <p>"Whenever we mention our issue in the case, sometimes we do not get the correct words or get the right idea… And as a result, we are sent to the wrong team that can't fix our issue."</p>
+                  <cite>— Amazon Sellers</cite>
+                </blockquote>
+                <blockquote class="inline-quote">
+                  <p>"Which is to be honest, I like being lazy, and I just ask customer support to do all that for me, and I just say it. Fast and saving sellers' time are important."</p>
+                  <cite>— Amazon Sellers</cite>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="finding-row">
+            <span class="finding-num">02.</span>
+            <div class="finding-body">
+              <p><strong>1,000-Entry Production Audit</strong> — Revealed that critical "signals" were already present in artifacts (emails, screenshots, reports) sellers possessed but lacked a low-friction way to share.</p>
+              <div class="audit-example">
+                <p class="example-label">Audit example:</p>
+                <blockquote class="example-block">
+                  <p>"The following shipment in Removal Order: **** was removed to our warehouse but is lost outbound. This shipped over 30 days ago but was not received as shown in the tracking below.</p>
+                  <p>Carrier: AMZL &nbsp; TrackingNumber: **** &nbsp; TrackingUrl:</p>
+                  <p>Date of Shipment: ****</p>
+                  <p>| FNSKU | Unit Quantity | Price Per Unit | Total Amount |<br>| **** | **** | **** | **** |<br>| **** | **** | **** | **** |</p>
+                  <p>Please reimburse, thank you!"</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 32px"><strong>The Hypothesis:</strong> By capturing <mark>"ground truth"</mark> data directly from existing artifacts would bypass <mark>typing friction and anxiety</mark>.</p>
       </div>
 
       <div class="block read">
         <h3>The Solution: From "Write" to "Share"</h3>
-        <ul class="prose-list">
-          <li><strong>Rich-Format Attachments:</strong> Integrated a seamless way to upload screenshots of errors or link specific system records (Shipment IDs, ASINs) early in the flow.</li>
-          <li><strong>Factual Grounding:</strong> By shifting focus from descriptive text to objective evidence, we gave AI models the "ground truth" needed for high-confidence classification.</li>
-        </ul>
+        <p>I redesigned the intake entry point to let sellers <mark>show the problem rather than describe it</mark> — by <mark>attaching</mark> screenshots, error logs, shipment reports, or certifications directly to their case.</p>
+        <p>The system then uses these attachments to pre-fill the issue description, reducing the burden of having to articulate a technical problem from scratch.</p>
       </div>
 
-      <div class="callout-block">
-        <div class="callout-card">
-          <div class="callout-eyebrow">The Strategic Move</div>
-          <h4>Breaking the Deadlock</h4>
-          <p><strong>The Resistance:</strong> Engineering initially rejected "Attachment," citing high infrastructure costs and immature AI image-analysis tools (early 2024).</p>
-          <p><strong>The Action:</strong> I used internal tools to run a "smoke test" — demonstrating that existing L1 models could already parse metadata and autofill description fields from attachments.</p>
-          <p><strong>The Result:</strong> This proof of existing capability turned a rejected concept into a <strong>Tier-1 roadmap item</strong>.</p>
+      <div class="before-after wrap">
+        <div class="ba-panel">
+          <p class="ba-label">Before</p>
+          <div class="ba-media">
+            <a class="lightbox-trigger" href="assets/images/Project1_ExpA_Design_Before.jpg" data-type="image">
+              <img src="assets/images/Project1_ExpA_Design_Before.jpg" alt="Before — original intake design" />
+            </a>
+          </div>
+        </div>
+        <div class="ba-panel">
+          <p class="ba-label">After</p>
+          <div class="ba-media">
+            <a class="lightbox-trigger" href="assets/images/Project1_ExpA_Design_After.mov" data-type="video">
+              <video src="assets/images/Project1_ExpA_Design_After.mov" autoplay loop muted playsinline></video>
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="mock-placeholder">
-        <div class="mock-ph-inner">
-          <div class="mock-ph-label">UI Mockup — Old vs. New</div>
-          <div class="mock-ph-body">Mockup placeholder — to be added</div>
+      <div class="strategic-card read">
+        <p class="strategic-eyebrow">The Pushback</p>
+        <h4 class="strategic-title">Turning a rejected concept into a roadmap item.</h4>
+        <div class="strategic-rows">
+          <div class="strategic-row">
+            <span class="strategic-label">Resistance</span>
+            <p class="strategic-text">Engineering initially rejected the attachment concept — citing <strong>infrastructure costs and immature image-analysis tools</strong> in mid 2025.</p>
+          </div>
+          <div class="strategic-row">
+            <span class="strategic-label">Action</span>
+            <p class="strategic-text">Rather than escalating or compromising, I ran a <strong>smoke test</strong> using internal tools to demonstrate that <strong>existing Claude 3.5 Sonnet models</strong> could already <strong>parse attachment metadata and pre-fill description fields</strong>.</p>
+          </div>
+          <div class="strategic-row">
+            <span class="strategic-label">Result</span>
+            <p class="strategic-text">The concept shipped in phases — Phase 1 allows sellers to attach screenshots and bypass the description field entirely, with pre-filling planned for later phases. It went from rejected to a <strong>roadmap item</strong>.</p>
+          </div>
         </div>
       </div>
+
+      <div class="block read">
+        <p class="process-label">Outcome</p>
+        <p>Phase 1 shipped and delivered measurable results across the seller base.</p>
+      </div>
+
+      <div class="outcome-stats wrap">
+        <div class="outcome-stat">
+          <div class="outcome-n">406K</div>
+          <div class="outcome-l">Annual seller contacts</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="outcome-n">$3.3MM</div>
+          <div class="outcome-l">Annual savings delivered</div>
+        </div>
+      </div>
+
     </section>
 
     <!-- ── 05 Experiment B ── -->
@@ -473,23 +546,34 @@
 
   <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
     <img src="" alt="Full size view" />
+    <video controls loop playsinline style="display:none"></video>
   </div>
 
   <script>
     (function () {
-      var lb  = document.getElementById('lightbox');
-      var lbImg = lb.querySelector('img');
+      var lb     = document.getElementById('lightbox');
+      var lbImg  = lb.querySelector('img');
+      var lbVid  = lb.querySelector('video');
+      function closeLb() {
+        lb.classList.remove('open');
+        lbImg.src = ''; lbImg.style.display = '';
+        lbVid.pause(); lbVid.src = ''; lbVid.style.display = 'none';
+      }
       document.querySelectorAll('.lightbox-trigger').forEach(function(a) {
         a.addEventListener('click', function(e) {
           e.preventDefault();
-          lbImg.src = a.href;
+          if (a.dataset.type === 'video') {
+            lbImg.style.display = 'none'; lbVid.style.display = '';
+            lbVid.src = a.href; lbVid.play();
+          } else {
+            lbVid.style.display = 'none'; lbImg.style.display = '';
+            lbImg.src = a.href;
+          }
           lb.classList.add('open');
         });
       });
-      lb.addEventListener('click', function() { lb.classList.remove('open'); lbImg.src = ''; });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src = ''; }
-      });
+      lb.addEventListener('click', function(e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
     })();
     (function () {
       var nav      = document.getElementById('topnav');
