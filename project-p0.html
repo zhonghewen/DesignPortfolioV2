@@ -156,7 +156,7 @@
       </header>
 
       <div class="block read">
-        <p>While I led <mark>9 distinct designs</mark> across the support ecosystem last year, I have selected the following <mark>three representative experiments</mark> to illustrate how I approached the problem end-to-end.</p>
+        <p>While I led <mark>9 distinct designs</mark> across the support ecosystem last year, I have selected the following <mark>3 representative experiments</mark> to illustrate how I approached the problem end-to-end.</p>
       </div>
 
       <div class="exp-grid wrap">
@@ -285,12 +285,12 @@
 
       <div class="outcome-stats wrap">
         <div class="outcome-stat">
-          <div class="outcome-n">406K</div>
-          <div class="outcome-l">Annual seller contacts</div>
-        </div>
-        <div class="outcome-stat">
           <div class="outcome-n">$3.3MM</div>
           <div class="outcome-l">Annual savings delivered</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="outcome-n ink">406K</div>
+          <div class="outcome-l">Annual seller contacts impacted</div>
         </div>
       </div>
 
@@ -301,53 +301,161 @@
       <header class="sec-head">
         <div class="sec-rule"></div>
         <div class="idx">05 / 09</div>
-        <h2>Experiment B</h2>
-        <p class="sub">Guided Structural Refinement — from anxiety to confidence.</p>
+        <h2>Experiment B — Rephrase Issues</h2>
       </header>
 
       <div class="block read">
         <h3>The Problem: The Verification Gap</h3>
-        <p>Even when sellers provided evidence, they feared the system might misinterpret their intent. Without definitive confirmation of the problem type, the model's resolution confidence remained low — and the lack of structured data created significant operational friction, causing unnecessary human escalations.</p>
+        <p>Even when sellers attempted to describe their issue, they often missed key information — and knew it. </p>
+        <ul class="prose-list" style="margin-top: 20px">
+          <li><strong>The user hurdle:</strong> Anxiety that <strong>incomplete input</strong> leads to an incorrect resolution</li>
+          <li><strong>The operational bottleneck:</strong> Without complete, structured information, the model's resolution confidence remained low — causing <strong>unnecessary human escalations</strong></li>
+        </ul>
+        <p style="margin-top: 32px"><strong>The Hypothesis:</strong> If the system could rephrase the seller's input into a clear, structured statement and surface missing information in context, sellers would feel genuinely understood — and the model would get the signal quality it needed to resolve automatically.</p>
       </div>
 
       <div class="block read">
-        <h3>The UX Challenge: Defining "Good" Data</h3>
-        <ul class="prose-list">
-          <li><strong>Synthesizing Needs:</strong> I bridged the gap between Applied Science partners (who needed specific "slots" filled like IDs and error codes) and sellers (who just wanted a fix).</li>
-          <li><strong>Strategic Iteration:</strong> I defined the "Target Description" and iterated based on what was technically feasible for the model <em>and</em> behaviorally realistic for a stressed seller.</li>
-        </ul>
+        <h3>Design Approach: Defining a "Good Rephrase"</h3>
+        <p>The core design challenge wasn't the interaction pattern — it was <strong>defining what a good rephrase actually looked like</strong>.</p>
+        <p>I selected the <strong>top 5 issue types</strong> (covering 21% of contact volume) and wrote ideal rephrases against real production seller queries, establishing <strong>UX quality principles</strong> that worked for both sellers and the model.</p>
+        <p>From there I drove a <strong>5-iteration loop</strong> with the science team — documenting where each rephrase fell short and translating failure patterns into actionable feedback. Other stakeholders joined selectively; I was the <strong>constant from start to finish</strong>.</p>
+      </div>
+
+      <div class="wrap">
+      <p class="rc-header">Rephrase Quality Evolution — Original Input → V1 (Static Template) → V5 (Dynamic Generation)</p>
+      <div class="rephrase-compare">
+        <!-- Original Input -->
+        <div class="rc-col">
+          <p class="rc-ver">Original Input</p>
+          <p class="rc-q">What issue are you facing?</p>
+          <p class="rc-a">Missing Inbound Shipment FBA12ABC****</p>
+          <p class="rc-q">What steps have you taken already?</p>
+          <p class="rc-a">Checked shipment plan</p>
+          <p class="rc-q">Include any relevant reference numbers (Optional)</p>
+          <p class="rc-a">FBA12ABC****</p>
+        </div>
+        <!-- V1 — Static template (low quality) -->
+        <div class="rc-col rc-scroll">
+          <p class="rc-ver">V1 <span class="compare-badge compare-badge-noise">Static Template</span></p>
+          <p class="rc-section"><strong>Subject:</strong> Inventory Discrepancy Investigation Request</p>
+          <p class="rc-section"><strong>Shipment Details:</strong></p>
+          <p class="rc-item">Shipment ID: [Enter ID]</p>
+          <p class="rc-item">MSKU/FNSKU: [Enter SKU]</p>
+          <p class="rc-item">Final Discrepancy: [Enter number] units</p>
+          <p class="rc-section"><strong>Inventory Details:</strong></p>
+          <p class="rc-item">□ Units Expected: [Number]</p>
+          <p class="rc-item">□ Units Located: [Number]</p>
+          <p class="rc-item">□ Net Discrepancy: [Number]</p>
+          <p class="rc-section"><strong>Shipping Information:</strong></p>
+          <p class="rc-item">□ Carrier: [Enter carrier name]</p>
+          <p class="rc-item">□ Tracking/BOL #: [Enter number]</p>
+          <p class="rc-item">□ Number of Boxes: [Enter number]</p>
+          <p class="rc-item">□ Date Delivered: [Enter date]</p>
+          <p class="rc-section"><strong>Documentation Attached:</strong></p>
+          <p class="rc-item">□ Invoice/Packing List</p>
+          <p class="rc-item">□ Proof of Delivery (POD)</p>
+          <p class="rc-item">□ Carrier Documentation</p>
+          <p class="rc-item">□ Additional Supporting Documents [specify]</p>
+          <p class="rc-section">Seller Status:</p>
+          <p class="rc-item">□ Manufacturer/Brand Registered</p>
+          <p class="rc-item">□ Reseller</p>
+          <p class="rc-item">□ Other [specify]</p>
+          <p class="rc-section"><strong>Additional Notes:</strong></p>
+          <ul class="rc-list">
+            <li>[Note any specific discrepancy patterns]</li>
+            <li>[Include relevant box/package descriptions]</li>
+            <li>[Note any special handling requirements]</li>
+            <li>[Include any previous case references]</li>
+          </ul>
+          <p class="rc-section"><strong>Request:</strong></p>
+          <p class="rc-a">Please investigate the above inventory discrepancy and process appropriate resolution.</p>
+        </div>
+        <!-- V5 — Dynamic generation (high quality) -->
+        <div class="rc-col">
+          <p class="rc-ver">V5 <span class="compare-badge compare-badge-signal">Dynamic Generation</span></p>
+          <p class="rc-prose">I have a missing inbound shipment for <strong>[shipment ID FBA12ABC****]</strong>. I have already tried to resolve this myself but was unable to. Could you please investigate and help reconcile the missing units for this shipment? <strong>[ASIN: Enter ASIN]</strong>, <strong>[FNSKU: Enter FNSKU]</strong></p>
+        </div>
+      </div>
+      </div>
+
+      <div class="strategic-card read">
+        <p class="strategic-eyebrow">The Challenge</p>
+        <h4 class="strategic-title">The Tech Approach Didn't Meet the UX Quality Bar</h4>
+        <div class="strategic-rows">
+          <div class="strategic-row">
+            <span class="strategic-label">Initial Approach</span>
+            <p class="strategic-text">Engineering proposed a <strong>static template approach</strong> to avoid a lengthy security review.</p>
+          </div>
+          <div class="strategic-row">
+            <span class="strategic-label">Trust Break</span>
+            <p class="strategic-text">Testing revealed it surfaced irrelevant prompts that had nothing to do with the seller's issue — <strong>breaking trust immediately</strong>.</p>
+          </div>
+          <div class="strategic-row">
+            <span class="strategic-label">The Push</span>
+            <p class="strategic-text">I partnered with the Applied Science team to push for a <strong>dynamic, case-based generation approach</strong> instead. It required going through security review, but it was the only path to quality sellers would actually trust.</p>
+          </div>
+        </div>
       </div>
 
       <div class="block read">
         <h3>The Solution: Guided Structural Scaffolding</h3>
-        <p>The "Rephrase & Prompt" interaction replaced the anxiety of writing from scratch with a guided confidence-building process — transforming a blank text field into a "mad-libs" structure where sellers only fill in the high-signal gaps the model actually needs.</p>
+        <p>Once the system generates a rephrase, it presents the seller's intent back to them as <strong>a clear, structured statement</strong> — with any missing critical information surfaced inline as specific fields to complete. With this approach, sellers see exactly <mark>what the system understood</mark> and exactly <mark>what it still needs</mark>.</p>
       </div>
 
-      <div class="madlibs-demo">
-        <div class="madlibs-label">Before — open text field</div>
-        <div class="madlibs-before">
-          <div class="ml-input-empty">Describe your issue...</div>
+      <div class="before-after wrap">
+        <div class="ba-panel">
+          <p class="ba-label">Before</p>
+          <div class="ba-media">
+            <div class="mock-ph-inner" style="min-height:220px">
+              <div class="mock-ph-body">Image placeholder — Before</div>
+            </div>
+          </div>
         </div>
-        <div class="madlibs-arrow">↓ &nbsp; Intent detected: "Update product listing"</div>
-        <div class="madlibs-label">After — structured prompt</div>
-        <div class="madlibs-after">
-          Update title for <span class="ml-blank">B001234567</span> to <span class="ml-blank">"Laptop Backpack, for 16" laptop, lightweight, black"</span>
-        </div>
-      </div>
-
-      <div class="callout-block">
-        <div class="callout-card">
-          <div class="callout-eyebrow">The Designer's Edge</div>
-          <h4>High-Fidelity Logic</h4>
-          <p>I didn't just design the UI — I designed the data mapping. Working with Scientists, I ensured every UI "blank" mapped directly to a required model "slot," turning the interface into a visual representation of the AI's data needs.</p>
-          <p><strong>Outcome:</strong> Eliminated "Missing Data" as a reason for failed automated resolutions.</p>
+        <div class="ba-panel">
+          <p class="ba-label">After</p>
+          <div class="ba-media">
+            <div class="mock-ph-inner" style="min-height:220px">
+              <div class="mock-ph-body">Image placeholder — After</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="mock-placeholder">
-        <div class="mock-ph-inner">
-          <div class="mock-ph-label">Interaction Flow — The Rephrase & Refine Step</div>
-          <div class="mock-ph-body">Mockup placeholder — to be added</div>
+      <div class="block read">
+        <p class="process-label">Validation</p>
+        <p>Unmoderated usability testing with 6 sellers showed 5 out of 6 <strong>rating satisfaction at 6 out of 7</strong>. The quality bar we set was validated in an unexpected way — sellers assumed the rephrase was a scripted demo, not a live system responding to their real input:</p>
+        <div class="quote-stack" style="margin-top: 14px">
+          <blockquote class="inline-quote">
+            <p>"This is like a preset scenario. So of course it's going to give the answer you want or at least understand… (But) the real test is using actual problems and not just a scripted one."</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
+        </div>
+        <p style="margin-top: 20px">Displaying captured identifiers as visible tags also <mark>built trust that critical details weren't being lost</mark>:</p>
+        <div class="quote-stack" style="margin-top: 14px">
+          <blockquote class="inline-quote">
+            <p>"I felt that (capturing provided ID and display them in tag) was good because sometimes you put in an ASIN or a SKU and you feel like it just kinda get lost or it doesn't get picked up."</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="block read">
+        <p class="process-label">Outcome</p>
+        <p>Eliminated unnecessary escalations and delivered measurable results, with seller satisfaction trending upward.</p>
+      </div>
+
+      <div class="outcome-stats wrap">
+        <div class="outcome-stat">
+          <div class="outcome-n">$1.7MM</div>
+          <div class="outcome-l">Annual savings delivered</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="outcome-n ink">208K</div>
+          <div class="outcome-l">Annual contacts eliminated</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="outcome-n">+9.3%</div>
+          <div class="outcome-l">Seller satisfaction (directional — small sample size)</div>
         </div>
       </div>
     </section>

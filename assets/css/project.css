@@ -580,29 +580,123 @@ code {
 
 /* ── Outcome stats ── */
 .outcome-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 8px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 72px;
+  margin: 20px auto 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
 }
 .outcome-stat {
-  padding: 28px 28px 24px;
-  background: var(--accent-soft);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 10px 10px 0;
+  padding: 0;
+  min-width: 140px;
 }
 .outcome-n {
-  font-size: clamp(40px, 5vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
   letter-spacing: -.02em;
 }
+.outcome-n.ink {
+  color: var(--ink);
+}
 .outcome-l {
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: var(--ink-3);
-  margin-top: 10px;
+  margin-top: 8px;
+  line-height: 1.45;
+  max-width: 160px;
+}
+
+/* ── Rephrase quality comparison ── */
+.rephrase-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px 0 40px;
+}
+.rc-header {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 10px;
+}
+.rc-col {
+  padding: 18px 16px;
+  border-right: 1px solid var(--rule);
+  background: var(--bg);
+  min-width: 0;
+  max-height: 300px;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+.rc-col.rc-scroll {
+  overflow-y: auto;
+}
+.rc-col:last-child {
+  border-right: none;
+}
+.rc-ver {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rc-q {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin: 12px 0 2px;
+}
+.rc-q:first-child { margin-top: 0; }
+.rc-a {
+  font-size: 12px;
+  color: var(--ink-3);
+  margin: 0;
+  line-height: 1.5;
+}
+.rc-section {
+  font-size: 11.5px;
+  color: var(--ink-2);
+  margin: 10px 0 2px;
   line-height: 1.4;
+}
+.rc-section:first-child { margin-top: 0; }
+.rc-item {
+  font-size: 11px;
+  color: var(--ink-4);
+  margin: 1px 0;
+  line-height: 1.45;
+  padding-left: 4px;
+}
+.rc-list {
+  font-size: 11px;
+  color: var(--ink-4);
+  margin: 4px 0 0 16px;
+  line-height: 1.65;
+  padding: 0;
+  list-style: disc;
+}
+.rc-prose {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.7;
+  margin: 0;
+}
+.rc-prose strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 /* ── Funnel diagram ── */
