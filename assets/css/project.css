@@ -585,8 +585,6 @@ code {
   justify-content: center;
   gap: 16px 72px;
   margin: 20px auto 0;
-  border-top: 1px solid var(--rule);
-  padding-top: 28px;
 }
 .outcome-stat {
   padding: 0;
@@ -977,6 +975,10 @@ code {
   margin: 0 0 10px;
 }
 .callout-card p:last-child { margin-bottom: 0; }
+
+/* ── Hypothesis paragraph ── */
+.hypothesis { font-style: italic; font-size: inherit; }
+.hypothesis strong { font-style: normal; }
 
 /* ── Ambiguous options example line ── */
 .options-example {
