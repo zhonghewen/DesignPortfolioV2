@@ -978,6 +978,49 @@ code {
 }
 .callout-card p:last-child { margin-bottom: 0; }
 
+/* ── Ambiguous options example line ── */
+.options-example {
+  font-style: italic;
+  color: var(--ink-3);
+  font-size: 13px;
+  margin: 6px 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--rule);
+  line-height: 1.6;
+}
+
+/* ── Latency table ── */
+.latency-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 24px;
+  font-size: 13px;
+}
+.latency-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--rule);
+}
+.latency-table td {
+  padding: 9px 12px;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.5;
+}
+.latency-table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  width: 90px;
+}
+.latency-table tr:last-child td { border-bottom: none; }
+.latency-table tbody tr:last-child td { color: var(--accent); font-weight: 500; }
+
 /* ── Mockup placeholder ── */
 .mock-placeholder {
   margin: 40px auto;

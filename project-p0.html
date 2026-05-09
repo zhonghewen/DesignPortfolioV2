@@ -465,61 +465,116 @@
       <header class="sec-head">
         <div class="sec-rule"></div>
         <div class="idx">06 / 09</div>
-        <h2>Experiment C</h2>
-        <p class="sub">Automated Execution — designing trust through transparency.</p>
+        <h2>Experiment C — Automated Execution</h2>
+        <p class="sub">Automating path selection to eliminate wrong-path escalations.</p>
       </header>
 
       <div class="block read">
-        <h3>The Problem: Execution Error & Latency Anxiety</h3>
-        <p>Users often chose the wrong path during manual execution. Fully automating the fix introduced a "processing gap" that made users anxious — they didn't know if the system was working or had stalled.</p>
+        <h3>The Problem: Wrong Path, Lost Trust</h3>
+        <p>When navigating self-service, sellers are often presented with <strong>ambiguous sub-issue options that look nearly identical</strong> — making it difficult to choose the right path. Take listing issues as an example: sellers are asked to distinguish between options like</p>
+        <p class="options-example">"received an error code or message," "product identifier related issues," and "product identifier exemptions"</p>
+        <p>— options that look nearly identical.</p>
+        <div class="quote-stack" style="margin-top: 16px">
+          <blockquote class="inline-quote">
+            <p>"Product identifier? What's that? Um, it's not clear really because product identifier is the ASIN or the name of it? Dunno."</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
+        </div>
+        <p style="margin-top: 20px">The result: sellers <strong>choose the wrong path or abandon self-service entirely</strong>, driving <strong>avoidable human escalations</strong>.</p>
       </div>
 
       <div class="block read">
-        <h3>The Solution: Managing Latency to Build Trust</h3>
-        <p>We moved from "Instructional" support to "Automated Execution" — where the system performs the fix on behalf of the seller:</p>
+        <h3>The Hypothesis</h3>
+        <p>By automating the solution selection entirely, sellers receive a more accurate resolution without ever having to navigate confusing options.</p>
+      </div>
+
+      <div class="block read">
+        <h3>Design Approach: Designing for Latency</h3>
+        <p>Automating the fix introduced a new challenge — the process takes 10+ seconds, a range where user attention drops sharply and abandonment spikes. Before designing the interaction, I conducted a <strong>literature review</strong> to establish a latency framework:</p>
+        <table class="latency-table">
+          <thead>
+            <tr><th>Range</th><th>User Experience</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Below 1s</td><td>Feels nearly instantaneous</td></tr>
+            <tr><td>1–3s</td><td>Acceptable, delay noticeable</td></tr>
+            <tr><td>4–10s</td><td>Tests user patience</td></tr>
+            <tr><td>10s+</td><td>Upper limit of focused attention — high abandonment risk</td></tr>
+          </tbody>
+        </table>
+        <p>Estimated latency data put our automated workflows at <strong>9+ seconds on average</strong>. So the design challenge became: <strong>how do we keep sellers engaged and trusting a process they can't see?</strong></p>
+      </div>
+
+      <div class="strategic-card read">
+        <p class="strategic-eyebrow">The Challenge</p>
+        <h4 class="strategic-title">Building Trust Without Streaming</h4>
+        <div class="strategic-rows">
+          <div class="strategic-row">
+            <span class="strategic-label">The Constraint</span>
+            <p class="strategic-text">The ideal solution — a <strong>streaming thinking model</strong> showing live progress — was ruled out due to compliance requirements. Instead, I had to design static status messages that felt transparent enough to maintain trust.</p>
+          </div>
+          <div class="strategic-row">
+            <span class="strategic-label">The Push</span>
+            <p class="strategic-text">I advocated with the tech team to surface <strong>key variables inline</strong> — such as the extracted identifier — so sellers could see the system had correctly understood their issue, even without live updates.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block read">
+        <h3>The Solution: Key Status Display</h3>
+        <p>I designed and tested two approaches:</p>
         <ul class="prose-list">
-          <li><strong>Verification Loop:</strong> Before execution, a "Confirmation Card" summarized the exact change about to occur — eliminating errors from misunderstood intent.</li>
-          <li><strong>Informative Status Transitions:</strong> Standard loaders were replaced with granular status updates at each processing step, so sellers always knew what the system was doing.</li>
+          <li><strong>Option 1:</strong> Full status breakdown — every step surfaced explicitly</li>
+          <li><strong>Option 2:</strong> Key status only — simplified progress with critical variables inline</li>
         </ul>
       </div>
 
-      <div class="status-flow">
-        <div class="status-step done">
-          <div class="status-dot"></div>
-          <div class="status-text">
-            <strong>Change confirmed</strong>
-            <span>Seller reviewed and approved the exact update</span>
-          </div>
+      <div class="before-after wrap">
+        <div class="ba-panel">
+          <p class="ba-label">Option 1</p>
+          <div class="ba-media mock-placeholder" style="min-height: 260px; border-radius: 8px;"></div>
         </div>
-        <div class="status-step active">
-          <div class="status-dot"></div>
-          <div class="status-text">
-            <strong>Verifying shipment records...</strong>
-            <span>Checking eligibility and system constraints</span>
-          </div>
-        </div>
-        <div class="status-step">
-          <div class="status-dot"></div>
-          <div class="status-text">
-            <strong>Applying update</strong>
-            <span>Writing change to backend systems</span>
-          </div>
-        </div>
-        <div class="status-step">
-          <div class="status-dot"></div>
-          <div class="status-text">
-            <strong>Complete</strong>
-            <span>Confirmation sent to seller</span>
-          </div>
+        <div class="ba-panel">
+          <p class="ba-label">Option 2</p>
+          <div class="ba-media mock-placeholder" style="min-height: 260px; border-radius: 8px;"></div>
         </div>
       </div>
 
-      <div class="callout-block">
-        <div class="callout-card">
-          <div class="callout-eyebrow">The Strategic Learning</div>
-          <h4>Designing for Trust</h4>
-          <p>Users weren't impatient with the time — they were impatient with <em>the silence.</em> By designing transparent status updates, we increased user tolerance for system latency by over <strong>40%</strong>, giving the model the time it needed to safely execute complex changes.</p>
-          <p><strong>Outcome:</strong> Significant reduction in human re-contacts for the same issue.</p>
+      <div class="block read">
+        <p class="process-label">Validation</p>
+        <p>Unmoderated usability testing with 8 sellers validated the approach:</p>
+        <ul class="prose-list">
+          <li><mark><strong>5 of 8 sellers preferred Option 2</strong></mark> for its simplicity</li>
+          <li>Surfacing the seller's own identifiers inline was the strongest trust signal</li>
+        </ul>
+        <div class="quote-stack" style="margin-top: 16px">
+          <blockquote class="inline-quote">
+            <p>"I like Option 2 better because there's less verbiage to read."</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
+        </div>
+        <div class="quote-stack" style="margin-top: 12px">
+          <blockquote class="inline-quote">
+            <p>"It understood what the situation was and gave me an explanation linked back to the situation."</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
+        </div>
+        <p style="margin-top: 20px">Critically, <mark><strong>0 of 8 sellers would abandon</strong></mark> the flow at 10 seconds if the automation consistently delivered the right resolution — validating that sellers tolerate latency when they trust the outcome.</p>
+      </div>
+
+      <div class="block read">
+        <p class="process-label">Outcome</p>
+        <p>Across 9 piloted self-service workflows (of 67 total), achieved <strong>83,000 annual contact reduction</strong> and <strong>$666K in annual savings</strong>. As the remaining 58 workflows roll out, the full-scale impact is projected to grow significantly.</p>
+      </div>
+
+      <div class="outcome-stats wrap">
+        <div class="outcome-stat">
+          <div class="outcome-n">$666K</div>
+          <div class="outcome-l">Annual savings delivered</div>
+        </div>
+        <div class="outcome-stat">
+          <div class="outcome-n ink">83K</div>
+          <div class="outcome-l">Annual contacts eliminated</div>
         </div>
       </div>
     </section>
