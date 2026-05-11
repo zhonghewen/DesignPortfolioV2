@@ -1,39 +1,33 @@
 /* ——— loader ——— */
+/* CSS handles both the ink-reveal animation and the 5s fallback dismiss.
+   JS only adds .done earlier (at ~4.4s) when images are ready. */
 (function(){
-  const loader = document.getElementById('page-loader');
+  var loader = document.getElementById('page-loader');
   if (!loader) return;
 
-  /* — ink-reveal animation — */
-  const rect = document.getElementById('lp-rect');
-  if (rect) {
-    const startReveal = () => {
-      void rect.getBoundingClientRect();
-      rect.style.transition = 'transform 2.78s cubic-bezier(.25,0,.08,1)';
-      rect.style.transform  = 'scaleX(1)';
-    };
-    /* wait for the font to finish loading so the ghost outline renders correctly */
-    document.fonts.load('90px "Liu Jian Mao Cao"')
-      .then(startReveal)
-      .catch(startReveal); /* start even if font request fails */
-  }
+  function dismissLoader(){ loader.classList.add('done'); }
 
-  /* — image preload — */
-  const KEY_IMAGES = [
+  /* bfcache: page restored from frozen snapshot */
+  window.addEventListener('pageshow', function(e){ if(e.persisted) dismissLoader(); });
+
+  var KEY_IMAGES = [
     'assets/images/bg-1.jpg',
     'assets/images/imac.png',
     'assets/images/screen-p0.png',
     'assets/images/zhonghe.png',
   ];
 
-  const imagesReady = Promise.all(KEY_IMAGES.map(src => new Promise(res => {
-    const img = new Image();
-    img.onload = img.onerror = res;
-    img.src = src;
-  })));
+  var imagesReady = Promise.all(KEY_IMAGES.map(function(src){
+    return new Promise(function(res){
+      var img = new Image();
+      img.onload = img.onerror = res;
+      img.src = src;
+    });
+  }));
 
-  const minTime = new Promise(res => setTimeout(res, 4400));
+  var minTime = new Promise(function(res){ setTimeout(res, 4400); });
 
-  Promise.all([imagesReady, minTime]).then(() => loader.classList.add('done'));
+  Promise.all([imagesReady, minTime]).then(dismissLoader);
 })();
 
 /* ——— data ——— */
@@ -51,7 +45,7 @@ const PROJECTS = [
     desc:"Architected long-term inline seller interactions and defined the “Minimum Lovable Experience” (MLE) for a 4-phased launch, transforming legacy support into an integrated multi-agent assistant.",
     high:"#Conversational AI  #Minimum Lovable Experience",
     panel:"rgb(238,239,246)", hl:"rgba(226,228,243,1)", ink:"rgb(84,71,157)",
-    texture:"b2", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →" },
+    texture:"b2", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →", url:"project-p1.html" },
   { id:2, title:"Context-Aware Support Orchestration @Amazon",
     tags:"#Complex workflows  #Rapid AI Prototyping",
     role:"Lead UX Designer",
@@ -188,7 +182,10 @@ select(0);
   const txt    = host.querySelector('.txt');
   const loader = document.getElementById('page-loader');
 
-  function type() {
+  let started = false;
+  function startOnce() {
+    if (started) return;
+    started = true;
     let i = 0;
     (function tick(){
       txt.textContent = full.slice(0, i);
@@ -201,14 +198,19 @@ select(0);
     })();
   }
 
-  /* Start typing once the page loader finishes fading out */
+  /* JS fast path: .done class added by portfolio.js at ~4.4s */
   const observer = new MutationObserver(function() {
     if (loader.classList.contains('done')) {
       observer.disconnect();
-      setTimeout(type, 520); /* 520ms ≈ end of the loader's 0.5s fade */
+      setTimeout(startOnce, 520);
     }
   });
   observer.observe(loader, { attributes: true, attributeFilter: ['class'] });
+
+  /* CSS fallback path: fires when loaderFadeOut animation ends (~5.5s) */
+  loader.addEventListener('animationend', function() {
+    setTimeout(startOnce, 200);
+  }, { once: true });
 })();
 
 /* ——— tweak hooks ——— */

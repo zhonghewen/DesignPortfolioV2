@@ -3,10 +3,14 @@
   position:fixed; inset:0; z-index:1000;
   background:#000;
   display:flex; align-items:center; justify-content:center;
+  /* CSS fallback: always dismiss at 5s even if JS never runs */
+  animation:loaderFadeOut .5s ease 5s forwards;
   transition:opacity .5s ease .1s, visibility .5s ease .1s;
 }
 #page-loader.done{
+  /* JS fast path: dismiss immediately when JS adds .done */
   opacity:0; visibility:hidden; pointer-events:none;
+  animation:none;
 }
 .loader-bar{
   position:absolute; bottom:0; left:0;
@@ -28,9 +32,13 @@
   fill:#EBCFB2;
 }
 #lp-rect{
-  transform-origin:0 0; transform:scaleX(0);
+  transform-origin:0 0;
+  /* CSS fallback: ink reveal always plays even if JS never runs */
+  animation:inkReveal 2.78s cubic-bezier(.25,0,.08,1) .4s both;
 }
 @keyframes loaderBarGrow{ to{ width:100%; } }
+@keyframes inkReveal{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+@keyframes loaderFadeOut{ to{ opacity:0; visibility:hidden; pointer-events:none; } }
 
 :root{
   --ink: rgb(74,74,74);
