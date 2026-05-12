@@ -45,29 +45,22 @@ const PROJECTS = [
     desc:"Architected long-term inline seller interactions and defined the “Minimum Lovable Experience” (MLE) for a 4-phased launch, transforming legacy support into an integrated multi-agent assistant.",
     high:"#Conversational AI  #Minimum Lovable Experience",
     panel:"rgb(238,239,246)", hl:"rgba(226,228,243,1)", ink:"rgb(84,71,157)",
-    texture:"b2", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →", url:"project-p1.html" },
-  { id:2, title:"Context-Aware Support Orchestration @Amazon",
+    texture:"b2", screen:"assets/images/screen-p1.jpg", scroll:0, link:"View Details  →", url:"project-p1.html" },
+  { id:2, title:"Unifying AI Tools for Complex Support Cases @Amazon",
     tags:"#Complex workflows  #Rapid AI Prototyping",
     role:"Lead UX Designer",
     desc:"Streamlined 5+ widgets into a unified flow to boost seller support productivity, using AI prototyping to accelerate concept exploration and validation.",
     high:"#Complex workflows  #Rapid AI Prototyping",
     panel:"rgb(246,238,243)", hl:"rgba(243,226,235,1)", ink:"rgb(157,71,90)",
-    texture:"b3", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →" },
-  { id:3, title:"Year End Dashboard @ADP",
-    tags:"#Dashboard  #Business Impact",
-    role:"Lead UX Designer",
-    desc:"Rebuilt the year-end tax dashboard into a status-first workspace that let payroll teams resolve thousands of filings on time and unlocked measurable efficiency gains at enterprise scale.",
-    high:"#Dashboard  #Business Impact",
-    panel:"rgb(246,241,238)", hl:"rgba(246,235,226,1)", ink:"rgb(152,74,35)",
-    texture:"b4", screen:"assets/images/screen-1.png", scroll:0, link:"View Details  →" },
+    texture:"b3", screen:"assets/images/screen-p2.jpg", scroll:0, link:"View Details  →", url:"project-p2.html" },
 ];
 const SECRET = {
   id:4, title:"0-to-1 Market Validation",
   role:"Sole Content Creator",
   desc:"Outside my 9-to-5, I founded a consumer clothing insight channel and scaled it to a 48K+ cross-platform audience. I treat this as my personal R&D lab to test generative AI workflows and data-driven growth strategies in the real world.",
-  high:"#YouTube Channel  #Community  #Storytelling",
+  high:"#Data-driven market growth",
   panel:"rgb(246,245,238)", hl:"rgba(243,240,215,1)", ink:"rgb(126,104,7)",
-  texture:"bs", link:"View the Channel  →"
+  texture:"bs", link:"View the Channel  →", url:"https://space.bilibili.com/596909417?spm_id_from=333.1007.0.0", external:true
 };
 
 /* ——— render lists ——— */
@@ -79,7 +72,7 @@ PROJECTS.forEach(p => {
   el.innerHTML = `<span class="head">${p.title}</span> <span class="hash">${p.tags}</span>`;
   pList.appendChild(el);
   el.addEventListener('mouseenter', () => select(p.id));
-  el.addEventListener('click', () => select(p.id, true));
+  el.addEventListener('click', () => { select(p.id); if (p.url) window.location.href = p.url; });
 });
 
 const sList = document.getElementById('secret-list');
@@ -158,6 +151,8 @@ function select(id){
   dLink.textContent  = data.link;
   dLink.style.color  = tint(data.ink);
   dLink.href         = data.url || '#';
+  dLink.target       = data.external ? '_blank' : '_self';
+  dLink.rel          = data.external ? 'noopener noreferrer' : '';
 
   if (id !== 4){
     if (scrollerImg && data.screen) scrollerImg.src = data.screen;
@@ -198,19 +193,22 @@ select(0);
     })();
   }
 
-  /* JS fast path: .done class added by portfolio.js at ~4.4s */
+  /* JS fast path: wait for the loader fade transition to fully complete */
   const observer = new MutationObserver(function() {
     if (loader.classList.contains('done')) {
       observer.disconnect();
-      setTimeout(startOnce, 520);
+      loader.addEventListener('transitionend', function() {
+        setTimeout(startOnce, 80);
+      }, { once: true });
     }
   });
   observer.observe(loader, { attributes: true, attributeFilter: ['class'] });
 
   /* CSS fallback path: fires when loaderFadeOut animation ends (~5.5s) */
-  loader.addEventListener('animationend', function() {
+  loader.addEventListener('animationend', function(e) {
+    if (e.animationName !== 'loaderFadeOut') return;
     setTimeout(startOnce, 200);
-  }, { once: true });
+  });
 })();
 
 /* ——— tweak hooks ——— */

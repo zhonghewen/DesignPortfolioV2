@@ -248,7 +248,7 @@ body{ display:flex; justify-content:center; }
 .photo{
   position:absolute; right:10%; top:6%; width:55%; aspect-ratio: 326 / 512;
   background:url(../images/zhonghe.png) center/cover no-repeat;
-  border-radius:2px; box-shadow:0 20px 40px rgba(0,0,0,.18);
+  border-radius:2px;
   opacity:0; transform:translateY(8px);
   transition:opacity .45s ease, transform .5s ease;
 }

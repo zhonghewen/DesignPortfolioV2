@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unifying AI Tools for Complex Support Cases @Amazon — Zhonghe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/project.css">
+  <style>
+    /* Project 3 accent — rose/pink */
+    :root {
+      --accent:      #9D4759;
+      --accent-soft: #F6EEF3;
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- ── Nav ── -->
+  <header class="nav" id="topnav">
+    <div class="nav-inner">
+      <a href="index.html">
+        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Portfolio
+      </a>
+      <nav class="nav-links">
+        <a href="assets/images/ZhongheWen_Resume_2026.pdf" download="ZhongheWen_Resume_2026.pdf">
+          <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Resume
+        </a>
+        <a href="https://www.linkedin.com/in/zhonghewen" target="_blank" rel="noopener">
+          <svg class="nav-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-5M16 17v-3a2 2 0 0 0-4 0"/></svg>
+          Connect
+        </a>
+        <a href="mailto:irena.zhonghe.wen@gmail.com">
+          <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 7l9 6 9-6M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"/></svg>
+          Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" style="background-image: url(assets/images/bg-1.jpg)"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid">
+        <div class="hero-mock" aria-hidden="true">
+          <div class="mock-screen">
+            <img src="assets/images/screen-p2.jpg" alt="">
+          </div>
+        </div>
+        <div class="hero-copy">
+          <h1>Unifying AI Tools for Complex Support Cases @Amazon</h1>
+          <p class="lede">Integrating multiple AI tools into the existing case handling interface to reduce average case handling time and drive associate adoption.</p>
+          <dl class="hero-meta">
+            <dt>Role</dt>
+            <dt>Tools</dt>
+            <dt>Outcome</dt>
+            <dd>Lead UX Designer</dd>
+            <dd>Associate shadowing, SME consultations, prototyping, stakeholder alignment workshops</dd>
+            <dd>Phase zero completed — <span class="hl">unified interface vision &amp; scoped roadmap</span></dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 01 The Problem ── -->
+    <section class="section" id="problem">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">01 / 06</div>
+        <h2>The Problem</h2>
+        <p class="sub">Five-plus tools, constant context-switching, and a wave of incoming AI widgets — all in one interface.</p>
+      </header>
+
+      <div class="block read">
+        <p>Amazon support associates handle complex seller cases using five or more features simultaneously. The current interface forces constant back-and-forth navigation, reducing efficiency and increasing cognitive load during high-stakes interactions.</p>
+        <p style="margin-top: 16px">At the same time, multiple AI tools were being developed in parallel — an issue summary widget, an execution widget, a response generator, and an associate assistant. Each team was building independently, creating a risk of a fragmented, bolt-on experience that would make the existing workflow worse, not better.</p>
+        <p class="hypothesis" style="margin-top: 24px"><strong>The Challenge:</strong> How do you integrate multiple AI tools into a complex, live interface — without disrupting what already works for the associates who depend on it every day?</p>
+      </div>
+    </section>
+
+    <!-- ── 02 Understanding Current Workflows ── -->
+    <section class="section alt" id="step-1">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">02 / 06</div>
+        <h2>Step 1 — Understanding Current Workflows</h2>
+        <p class="sub">Shadowing associates to find where AI tools could add value — and where they'd create friction.</p>
+      </header>
+
+      <div class="block read">
+        <p>Before designing anything, I needed to understand how associates actually worked. I conducted associate shadowing sessions to map their workflow into three core stages:</p>
+        <div class="finding-list">
+          <div class="finding-row">
+            <span class="finding-num">01.</span>
+            <div class="finding-body">
+              <p><strong>Understanding the issue</strong> — reading case history, seller context, and prior contacts to build a mental model of the problem</p>
+            </div>
+          </div>
+          <div class="finding-row">
+            <span class="finding-num">02.</span>
+            <div class="finding-body">
+              <p><strong>Selecting the right solution</strong> — navigating across tools to identify the correct resolution path, policy, or escalation route</p>
+            </div>
+          </div>
+          <div class="finding-row">
+            <span class="finding-num">03.</span>
+            <div class="finding-body">
+              <p><strong>Replying to the seller</strong> — drafting and sending a response that is accurate, empathetic, and meets quality standards</p>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 24px">This revealed the key friction points — and, critically, exactly where AI tools could add real value versus where they might interrupt a flow that already worked.</p>
+      </div>
+    </section>
+
+    <!-- ── 03 Mapping Widgets to Architecture ── -->
+    <section class="section" id="step-2">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">03 / 06</div>
+        <h2>Step 2 — Mapping Widgets to Architecture</h2>
+        <p class="sub">Organizing a fragmented set of AI tools into a coherent, structured system.</p>
+      </header>
+
+      <div class="block read">
+        <p>With the workflow mapped, I categorized both existing features and incoming AI widgets into three functional areas based on where they fit in the associate's process. I then consulted SMEs on two key dimensions:</p>
+        <ul class="prose-list" style="margin-top: 16px">
+          <li><strong>Frequency of use</strong> — how often does each tool appear in a typical case, and does that justify primary versus secondary placement?</li>
+          <li><strong>Importance to resolution</strong> — how critical is each tool to reaching a correct outcome, and what happens if it's buried or missed?</li>
+        </ul>
+        <p style="margin-top: 20px">From this, I identified the information flow between tools — which outputs from one widget fed directly into the next — giving us a clear picture of natural groupings and dependencies.</p>
+      </div>
+
+      <div class="strategic-card read">
+        <p class="strategic-eyebrow">Key Insight</p>
+        <h4 class="strategic-title">The AI Tools Were Solving Three Different Jobs</h4>
+        <div class="strategic-rows">
+          <div class="strategic-row">
+            <span class="strategic-label">Understanding</span>
+            <p class="strategic-text">Issue summary and case context tools reduced the time associates spent reading — compressing a 20-minute case history into an actionable brief.</p>
+          </div>
+          <div class="strategic-row">
+            <span class="strategic-label">Decision-making</span>
+            <p class="strategic-text">The execution widget and associate assistant supported resolution selection — surfacing the right policy, escalation path, or action at the right moment.</p>
+          </div>
+          <div class="strategic-row">
+            <span class="strategic-label">Communication</span>
+            <p class="strategic-text">The response generator reduced drafting time by generating a structured seller reply, leaving associates to review and refine rather than write from scratch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 Prototyping & Validation ── -->
+    <section class="section alt" id="step-3">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">04 / 06</div>
+        <h2>Step 3 — Prototyping &amp; Navigating Pushback</h2>
+        <p class="sub">Testing consolidation scenarios with PMs — and aligning on what phase zero would actually deliver.</p>
+      </header>
+
+      <div class="block read">
+        <p>Based on AI confidence levels and usage frequency, I prototyped consolidation scenarios showing how widgets could be grouped, merged, or eliminated — then validated feasibility with product managers across the involved teams.</p>
+        <p style="margin-top: 16px">This surfaced three significant pushbacks that shaped the final direction:</p>
+        <div class="finding-list">
+          <div class="finding-row">
+            <span class="finding-num">01.</span>
+            <div class="finding-body">
+              <p><strong>Layout concerns</strong> — PMs raised questions about how widgets would visually coexist without overwhelming the interface or competing for attention</p>
+            </div>
+          </div>
+          <div class="finding-row">
+            <span class="finding-num">02.</span>
+            <div class="finding-body">
+              <p><strong>Tier complexity</strong> — Different associate tiers use different widget combinations, making a single unified layout difficult to design without excessive conditionality</p>
+            </div>
+          </div>
+          <div class="finding-row">
+            <span class="finding-num">03.</span>
+            <div class="finding-body">
+              <p><strong>Scope creep risk</strong> — Too many secondary tools were being proposed for a single phase, threatening timeline and launch quality</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block read">
+        <p class="process-label">How I Navigated Them</p>
+        <ul class="prose-list">
+          <li><strong>Aligned PMs on a single future-state interface</strong> for all associate tiers — eliminating the need to design multiple tier-specific variations and reducing the layout debate to one shared vision</li>
+          <li><strong>Scoped phase zero to six core widgets</strong>: issue summary, execution widget, response generator, correspondence, annotation, and reply — the highest-frequency, highest-impact tools across tiers</li>
+          <li><strong>Deferred the associate assistant orchestrator</strong> to a later phase based on timeline constraints and technical feasibility, keeping phase zero achievable and coherent</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── 05 Outcome ── -->
+    <section class="section" id="outcome">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">05 / 06</div>
+        <h2>Outcome</h2>
+        <p class="sub">A clear unified vision and a pragmatic roadmap — with full impact being measured.</p>
+      </header>
+
+      <div class="block read">
+        <p>Phase zero established a clear, unified interface vision and a pragmatic roadmap for integrating AI tools into the associate case handling workflow. Rather than a fragmented set of independently developed widgets, the team now had a shared architectural direction and a scoped delivery plan.</p>
+        <p style="margin-top: 20px">Full impact on case handling time and associate adoption is currently being measured as the phase zero build progresses.</p>
+      </div>
+
+      <div class="stats-row wrap">
+        <div class="stat">
+          <div class="n">5+</div>
+          <div class="l">features consolidated into a unified interface architecture</div>
+        </div>
+        <div class="stat">
+          <div class="n">6</div>
+          <div class="l">core AI widgets scoped and sequenced for phase zero delivery</div>
+        </div>
+        <div class="stat">
+          <div class="n">3</div>
+          <div class="l">functional areas defined — understanding, decision-making, and communication</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 06 Reflections ── -->
+    <section class="section alt" id="reflections">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">06 / 06</div>
+        <h2>Reflections</h2>
+        <p class="sub">What integrating AI into a live enterprise workflow taught me.</p>
+      </header>
+
+      <ul class="steps-list">
+        <li>
+          <span class="k">01.</span>
+          <span>
+            <span class="t">Deep Workflow Understanding Before New Patterns</span>
+            <span class="d">Designing for internal tools requires mapping what already exists before introducing anything new. The shadowing sessions revealed that associates had developed efficient workarounds for the interface's shortcomings — and any AI integration that disrupted those workarounds would face immediate resistance, regardless of how well-designed it was.</span>
+          </span>
+        </li>
+        <li>
+          <span class="k">02.</span>
+          <span>
+            <span class="t">Pragmatic Phasing Is Critical for AI Integration</span>
+            <span class="d">When integrating AI into complex legacy systems, the temptation is to solve everything at once. Scoping phase zero to the six highest-impact widgets — and explicitly deferring the orchestrator — made the difference between a credible launch plan and an indefinitely delayed one. The roadmap gave PMs confidence without overpromising.</span>
+          </span>
+        </li>
+        <li>
+          <span class="k">03.</span>
+          <span>
+            <span class="t">Influencing Strategy Requires Evidence, Not Opinion</span>
+            <span class="d">Getting PMs aligned on a single unified interface — rather than tier-specific variations — required showing, not telling. Prototyping the consolidation scenarios made the tradeoffs concrete and moved the conversation from abstract debate to actionable decision-making. Evidence-based prototyping is how designers earn a seat at the strategy table.</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ── Floating bottom nav ── -->
+  <aside class="float-nav" id="floatNav" aria-label="Section navigation">
+    <ul>
+      <li><a href="#problem" data-target="problem"><span class="num">01</span> Problem</a></li>
+      <li><a href="#step-1" data-target="step-1"><span class="num">02</span> Research</a></li>
+      <li><a href="#step-2" data-target="step-2"><span class="num">03</span> Mapping</a></li>
+      <li><a href="#step-3" data-target="step-3"><span class="num">04</span> Prototyping</a></li>
+      <li><a href="#outcome" data-target="outcome"><span class="num">05</span> Outcome</a></li>
+      <li><a href="#reflections" data-target="reflections"><span class="num">06</span> Reflections</a></li>
+      <li class="fn-sep" aria-hidden="true"></li>
+      <li>
+        <button class="fn-top" id="toTop" aria-label="Back to top">
+          <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          Top
+        </button>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="foot-grid wrap">
+      <a class="foot-card prev" href="project-p1.html">
+        <div class="foot-label"><span class="arrow">←</span> Previous</div>
+        <div class="thumb"></div>
+        <div class="foot-title">Agentic Support Assistant @Amazon</div>
+      </a>
+      <a class="foot-home" href="index.html">
+        <div class="glyph">Zw</div>
+        <div class="lbl">All Work</div>
+      </a>
+      <a class="foot-card next" href="#">
+        <div class="foot-label">Next <span class="arrow">→</span></div>
+        <div class="thumb"></div>
+        <div class="foot-title">More coming soon</div>
+      </a>
+    </div>
+  </footer>
+
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+    <img src="" alt="Full size view" />
+    <video controls loop playsinline style="display:none"></video>
+  </div>
+
+  <script>
+    (function () {
+      var lb     = document.getElementById('lightbox');
+      var lbImg  = lb.querySelector('img');
+      var lbVid  = lb.querySelector('video');
+      function closeLb() {
+        lb.classList.remove('open');
+        lbImg.src = ''; lbImg.style.display = '';
+        lbVid.pause(); lbVid.src = ''; lbVid.style.display = 'none';
+      }
+      document.querySelectorAll('.lightbox-trigger').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (a.dataset.type === 'video') {
+            lbImg.style.display = 'none'; lbVid.style.display = '';
+            lbVid.src = a.href; lbVid.play();
+          } else {
+            lbVid.style.display = 'none'; lbImg.style.display = '';
+            lbImg.src = a.href;
+          }
+          lb.classList.add('open');
+        });
+      });
+      lb.addEventListener('click', function(e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
+    })();
+    (function () {
+      var nav      = document.getElementById('topnav');
+      var floatNav = document.getElementById('floatNav');
+      var hero     = document.getElementById('hero');
+      var sections = ['problem','step-1','step-2','step-3','outcome','reflections']
+                       .map(function(id){ return document.getElementById(id); });
+      var links    = Array.from(floatNav.querySelectorAll('a[data-target]'));
+
+      function onScroll() {
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        nav.classList.toggle('solid', heroBottom < 80);
+        floatNav.classList.toggle('show', heroBottom < 80);
+      }
+
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          var active = links.find(function(a){ return a.dataset.target === entry.target.id; });
+          if (active) active.classList.add('active');
+        });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+      sections.forEach(function(s){ if (s) io.observe(s); });
+
+      document.getElementById('toTop').addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var el = document.getElementById(a.dataset.target);
+          if (!el) return;
+          e.preventDefault();
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 24, behavior: 'smooth' });
+        });
+      });
+
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>
