@@ -12,6 +12,10 @@
 
   var KEY_IMAGES = [
     'assets/images/bg-1.jpg',
+    'assets/images/bg-2.jpg',
+    'assets/images/bg-3.png',
+    'assets/images/bg-4.jpg',
+    'assets/images/bg-secret.jpg',
     'assets/images/imac.png',
     'assets/images/screen-p0.png',
     'assets/images/zhonghe.png',
