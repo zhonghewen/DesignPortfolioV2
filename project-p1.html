@@ -9,11 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/project.css">
   <style>
-    /* Project 2 accent — purple/violet */
-    :root {
-      --accent:      #54479D;
-      --accent-soft: #EEEDF8;
-    }
+    .stat .n { color: var(--ink); }
   </style>
 </head>
 <body id="top">
@@ -22,8 +18,8 @@
   <header class="nav" id="topnav">
     <div class="nav-inner">
       <a href="index.html">
-        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        Portfolio
+        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+        Home
       </a>
       <nav class="nav-links">
         <a href="assets/images/ZhongheWen_Resume_2026.pdf" download="ZhongheWen_Resume_2026.pdf">
@@ -34,7 +30,7 @@
           <svg class="nav-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-5M16 17v-3a2 2 0 0 0-4 0"/></svg>
           Connect
         </a>
-        <a href="mailto:sseinspiration@gmail.com">
+        <a href="mailto:irena.zhonghe.wen@gmail.com">
           <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 7l9 6 9-6M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"/></svg>
           Contact
         </a>
@@ -56,14 +52,14 @@
         </div>
         <div class="hero-copy">
           <h1>Agentic Support Assistant @Amazon</h1>
-          <p class="lede">Replacing Seller Central's traditional help page with an AI assistant — designing the inline interaction pattern and component system that made large-scale migration possible without harming seller trust or key business metrics.</p>
+          <p class="lede">Replacing Seller Central's traditional help page with an AI assistant while ensuring smooth migration and seller adoption.</p>
           <dl class="hero-meta">
             <dt>Role</dt>
             <dt>Tools</dt>
             <dt>Outcome</dt>
             <dd>Sole UX Designer</dd>
             <dd>Figma, Builder.io</dd>
-            <dd>Phase 0 result — <span class="hl">$372k</span></dd>
+            <dd>Phase 0 result — <span class="hl">$372k annual savings</span></dd>
           </dl>
         </div>
       </div>
@@ -73,285 +69,243 @@
     <section class="section" id="problem">
       <header class="sec-head">
         <div class="sec-rule"></div>
-        <div class="idx">01 / 06</div>
+        <div class="idx">01 / 07</div>
         <h2>The Problem</h2>
-        <p class="sub">Migrating a complex legacy help system to an AI assistant — without breaking seller trust.</p>
       </header>
 
       <div class="block read">
-        <p>Amazon Seller Central was replacing its traditional help page with an AI assistant, accessible from every page across the platform. This was not a greenfield product — it had to absorb the full complexity of an existing system that thousands of sellers relied on daily.</p>
-        <p>The migration created two core challenges:</p>
+        <p>Amazon Seller Central's traditional help page was migrating to an AI assistant. The challenge was twofold:</p>
         <ul class="prose-list" style="margin-top: 16px">
-          <li><strong>Adoption &amp; metrics protection</strong> — Ensuring sellers would embrace the new format without harming key business metrics like satisfaction scores and contact rates</li>
-          <li><strong>Scalability</strong> — Designing a UX pattern that could handle the full breadth of workflows in the legacy system</li>
+          <li><strong>Functional parity</strong> — Maintain all existing functionality in a significantly smaller conversational interface</li>
+          <li><strong>Metrics protection</strong> — Ensure the migration didn't harm key business metrics like seller satisfaction and contact rates</li>
         </ul>
-      </div>
-
-      <div class="before-after wrap">
-        <div class="ba-panel">
-          <p class="ba-label">Before — Traditional Help Page</p>
-          <div class="ba-media">
-            <a class="lightbox-trigger" href="assets/images/Project2_Before_HelpPage.jpg" data-type="image">
-              <img src="assets/images/Project2_Before_HelpPage.jpg" alt="Before — Traditional Get Help page" />
-            </a>
-          </div>
-        </div>
-        <div class="ba-panel">
-          <p class="ba-label">After — Seller AI Assistant</p>
-          <div class="ba-media">
-            <a class="lightbox-trigger" href="assets/images/Project2_After_Assistant.jpg" data-type="image">
-              <img src="assets/images/Project2_After_Assistant.jpg" alt="After — Seller AI Assistant panel" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="block read">
-        <p>Through usability testing and early launch data, we discovered that <strong>verbose AI responses were causing high abandonment rates</strong> — validating the need to redesign the core interaction pattern for clarity and efficiency before scaling further.</p>
       </div>
     </section>
 
-    <!-- ── 02 Challenge 1: Space Constraints ── -->
+    <!-- ── 02 Challenge 1: Feature Parity in Constrained Space ── -->
     <section class="section alt" id="challenge-1">
       <header class="sec-head">
         <div class="sec-rule"></div>
-        <div class="idx">02 / 06</div>
-        <h2>Challenge 1 — Space Constraints</h2>
-        <p class="sub">Compressing a full help surface into a conversational panel.</p>
+        <div class="idx">02 / 07</div>
+        <h2>Challenge 1 — Feature Parity in Constrained Space</h2>
+        <p class="sub">Design Approach</p>
       </header>
 
       <div class="block read">
-        <p>The AI assistant lives in a small side panel — far less real estate than the traditional help page it was replacing. This forced a fundamental rethinking of how to present information, actions, and workflows within a constrained space.</p>
-        <p>Legacy help content included rich tables, multi-column layouts, and step-by-step instructional content — none of which could simply be ported into a chat interface without becoming unusable.</p>
-        <p class="hypothesis" style="margin-top: 24px"><strong>The Hypothesis:</strong> If we systematically mapped every help feature category onto the assistant panel, we could identify which patterns compressed cleanly and which required entirely new interaction approaches.</p>
-      </div>
-
-      <div class="block read">
-        <h3>Design Approach</h3>
-        <p>I collaborated with stakeholders to prototype and map <strong>ten key feature categories</strong> from the old help page onto the AI assistant panel — covering everything from policy lookup to case creation to escalation flows.</p>
-        <p>For each category, I evaluated three dimensions:</p>
-        <div class="finding-list">
-          <div class="finding-row">
-            <span class="finding-num">01.</span>
-            <div class="finding-body">
-              <p><strong>Information density</strong> — how much content needs to be visible at once, and what could be collapsed, progressive-disclosed, or removed without losing utility</p>
-            </div>
-          </div>
-          <div class="finding-row">
-            <span class="finding-num">02.</span>
-            <div class="finding-body">
-              <p><strong>Interaction complexity</strong> — whether the feature required forms, selections, or confirmations, and how to nest those into a linear chat thread</p>
-            </div>
-          </div>
-          <div class="finding-row">
-            <span class="finding-num">03.</span>
-            <div class="finding-body">
-              <p><strong>Trust signals</strong> — what information sellers needed to see to feel confident the assistant understood their issue before taking any action</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block read">
-        <h3>Design Output</h3>
-        <p>The mapping exercise produced a <strong>feature-to-pattern taxonomy</strong> — a shared reference that aligned product, engineering, and content teams on what was achievable in Phase 1 versus what needed phased delivery.</p>
+        <p>The AI assistant panel is significantly smaller than the traditional help page, making it <strong>impossible to display all features</strong> the same way.</p>
+        <p>With <strong>no clear requirements</strong> from stakeholders on how to prioritize them, I used <strong>interaction data and past UX research</strong> to make trade-off decisions — prioritizing the most frequently used features on the landing view while keeping less frequently used features conditionally rather than upfront.</p>
       </div>
 
       <div class="flow-diagram">
-        <a class="lightbox-trigger" href="assets/images/Project2_Challenge1_FeatureMap.jpg" data-type="image">
-          <img src="assets/images/Project2_Challenge1_FeatureMap.jpg" alt="Feature mapping — help categories onto AI assistant panel" />
-        </a>
+        <div style="border:1px solid var(--rule); border-radius:8px; overflow:hidden;">
+          <a class="lightbox-trigger" href="assets/images/Project2_Cha1_Comparison.png" data-type="image">
+            <img src="assets/images/Project2_Cha1_Comparison.png" alt="Side-by-side: legacy Get Help page vs. AI assistant panel showing feature trade-offs" style="width:100%; display:block;" />
+          </a>
+        </div>
+        <p class="ba-label" style="text-align:center; margin-top:12px;">Left — Legacy "Get Help" page &nbsp;·&nbsp; Right — Inline AI Seller Assistant</p>
       </div>
     </section>
 
-    <!-- ── 03 Challenge 2: Multi-step Workflows ── -->
+    <!-- ── 03 Challenge 2 ── -->
     <section class="section" id="challenge-2">
       <header class="sec-head">
         <div class="sec-rule"></div>
-        <div class="idx">03 / 06</div>
-        <h2>Challenge 2 — Multi-step Workflows</h2>
-        <p class="sub">Enabling complex self-service tasks inside a linear chat thread.</p>
+        <div class="idx">03 / 07</div>
+        <h2>Challenge 2 — Designing for a Flow You Can't Predefine</h2>
+        <p class="sub">Design Approach</p>
       </header>
 
       <div class="block read">
-        <p>Many of Seller Central's self-service tools involve <strong>sequential steps</strong> — submitting evidence, selecting options, confirming actions, and tracking outcomes — all within a single support interaction. The traditional help page handled this through dedicated full-page flows.</p>
-        <p>Inside a chat panel, the entire flow had to happen inline, without navigating away — and had to remain clear to sellers at every step.</p>
-        <p class="hypothesis" style="margin-top: 24px"><strong>The Hypothesis:</strong> An inline interaction pattern — where UI components render directly within the chat thread — would let sellers complete multi-step workflows without breaking the conversational context or losing their place.</p>
+        <p>Unlike the old <strong>rule-based</strong> flow where every seller followed the same fixed path, the new agentic flow is entirely <strong>context-dependent</strong>. The agent dynamically generates the flow based on:</p>
+        <ul class="prose-list" style="margin-top: 16px">
+          <li>Prior conversation</li>
+          <li>Data retrieved via tools</li>
+          <li>Seller input — meaning no two flows are the same</li>
+        </ul>
+        <p style="margin-top: 20px">You can't predefine a single path.</p>
+      </div>
+
+      <div class="flow-diagram">
+        <div style="border:1px solid var(--rule); border-radius:8px; overflow:hidden;">
+          <a class="lightbox-trigger" href="assets/images/Project2_Cha2_Comparison.jpg" data-type="image">
+            <img src="assets/images/Project2_Cha2_Comparison.jpg" alt="Side-by-side: traditional rule-based flow vs. new agentic flow" style="width:100%; display:block;" />
+          </a>
+        </div>
+        <p class="ba-label" style="text-align:center; margin-top:12px;">Left — Traditional self-service flow (rule-based) &nbsp;·&nbsp; Right — Support agent flow (context-dependent)</p>
       </div>
 
       <div class="block read">
-        <h3>Design Approach: The Inline Interaction Pattern</h3>
-        <p>I designed a system where the AI assistant could embed <strong>structured UI components — forms, selections, confirmations — directly into the chat thread</strong>. Each component appeared in context, tied to a specific step in the workflow, rather than as a separate page or modal.</p>
-        <p>This preserved the conversational flow while giving sellers the precision and control they needed to complete high-stakes tasks like case creation and escalation.</p>
-        <p>Key design decisions in the pattern:</p>
-        <ul class="prose-list" style="margin-top: 16px">
-          <li><strong>Progressive commitment</strong> — each step is confirmed before advancing, preventing accidental submissions</li>
-          <li><strong>Inline error recovery</strong> — validation and corrections happen within the same thread, not on a separate error page</li>
-          <li><strong>Persistent context</strong> — previously captured information (ASINs, case IDs) remains visible throughout the flow, reducing re-entry burden</li>
+        <h3>My Approach</h3>
+        <p>Instead of designing end-to-end flows, I identified the smallest interaction unit as the foundational building block — <strong>modular components the agent assembles dynamically</strong> based on context. Working with SMEs, I mapped key use cases and broke them into atomic units.</p>
+      </div>
+
+      <div class="flow-diagram">
+        <div style="border:1px solid var(--rule); border-radius:8px; overflow:hidden;">
+          <a class="lightbox-trigger" href="assets/images/Project2_Cha2_units.jpg" data-type="image">
+            <img src="assets/images/Project2_Cha2_units.jpg" alt="Component library — four atomic interaction unit types" style="width:100%; display:block;" />
+          </a>
+        </div>
+        <p class="ba-label" style="text-align:center; margin-top:12px;">Examples of atomic unit types — Selection, Selection with description, ID input field, and Mutating actions.</p>
+      </div>
+
+      <div class="block read">
+        <p>But defining the units alone wasn't enough. I needed to show how they work together in a real agentic experience — and that's where new challenges emerged:</p>
+        <p class="hypothesis" style="margin-top:20px; font-style:italic;">Sellers can choose to chat with the agent at any point instead of engaging with an inline interaction unit, <strong>pushing it out of view</strong>. Forcing sellers to scroll back creates friction.</p>
+        <p style="margin-top:20px">To address this, I designed the agent to regenerate contextually relevant suggestions based on the conversation — so the flow always moves forward, never backward.</p>
+      </div>
+
+      <div class="flow-diagram">
+        <div style="border:1px solid var(--rule); border-radius:8px; overflow:hidden;">
+          <a class="lightbox-trigger" href="assets/images/Project2_Cha2_handleChat.mov" data-type="video">
+            <video src="assets/images/Project2_Cha2_handleChat.mov" autoplay loop muted playsinline style="width:100%; display:block;"></video>
+          </a>
+        </div>
+        <p class="ba-label" style="text-align:center; margin-top:12px;">When a seller chats instead of selecting an inline unit, the agent regenerates contextually relevant suggestions — keeping the flow moving forward.</p>
+      </div>
+
+      <div class="block read">
+        <p>These real-world scenarios made clear that we needed a set of principles to guide trade-off decisions consistently across all cases:</p>
+        <ul class="prose-list" style="margin-top:20px">
+          <li><strong>Minimal input</strong> — Use tools to find answers independently before asking sellers. When input is needed, ask up to three questions max — anything more warrants an open canvas</li>
+          <li><strong>Single turn</strong> — Avoid complex navigation inline; keep interactions simple and contained</li>
+          <li><strong>Continuity</strong> — Sellers can use chat at any point to get help without losing their place in the flow</li>
+          <li><strong>Efficiency</strong> — Batch related inputs together. When sellers can click to select, never ask them to type</li>
         </ul>
       </div>
 
       <div class="strategic-card read">
-        <p class="strategic-eyebrow">The Validation Signal</p>
-        <h4 class="strategic-title">Early Launch Data Confirmed the Inline Bet</h4>
+        <p class="strategic-eyebrow">Resource Constraints &amp; Phase Zero Decision</p>
+        <h4 class="strategic-title">Scoping Down to a Minimum Viable Version</h4>
         <div class="strategic-rows">
-          <div class="strategic-row">
-            <span class="strategic-label">What We Found</span>
-            <p class="strategic-text">Early testing revealed that <strong>abandonment rates doubled</strong> when the assistant used verbose conversational responses instead of structured inline components — validating that sellers needed structured interaction, not narrative output, for task completion.</p>
-          </div>
-          <div class="strategic-row">
-            <span class="strategic-label">What It Changed</span>
-            <p class="strategic-text">This data shifted the team's assumptions about conversational AI. The assistant's job was not to explain — it was to <strong>compress a complex workflow into the smallest possible interaction cost</strong>. Conversation was the wrapper, not the mechanism.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="before-after wrap">
-        <div class="ba-panel">
-          <p class="ba-label">Verbose Conversational Flow</p>
-          <div class="ba-media">
-            <a class="lightbox-trigger" href="assets/images/Project2_Challenge2_Before.jpg" data-type="image">
-              <img src="assets/images/Project2_Challenge2_Before.jpg" alt="Verbose conversational response pattern" />
-            </a>
-          </div>
-        </div>
-        <div class="ba-panel">
-          <p class="ba-label">Inline Interaction Pattern</p>
-          <div class="ba-media">
-            <a class="lightbox-trigger" href="assets/images/Project2_Challenge2_After.mov" data-type="video">
-              <video src="assets/images/Project2_Challenge2_After.mov" autoplay loop muted playsinline></video>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── 04 Challenge 3: Scalability ── -->
-    <section class="section alt" id="challenge-3">
-      <header class="sec-head">
-        <div class="sec-rule"></div>
-        <div class="idx">04 / 06</div>
-        <h2>Challenge 3 — Scalability</h2>
-        <p class="sub">Building a component system that could absorb an entire legacy platform.</p>
-      </header>
-
-      <div class="block read">
-        <p>Designing a good inline pattern for one workflow wasn't enough — the assistant needed to handle <strong>hundreds of distinct use cases</strong> across Seller Central. Designing custom interactions for each case at that scale was not feasible.</p>
-        <p class="hypothesis" style="margin-top: 24px"><strong>The Hypothesis:</strong> If the dominant interaction patterns across all legacy workflows could be extracted and systematized, a small component library could cover the full surface — making future feature migration a matter of assembly, not bespoke design.</p>
-      </div>
-
-      <div class="block read">
-        <h3>Design Approach: Pattern Extraction</h3>
-        <p>Working with subject-matter experts across teams, I analyzed the <strong>highest-volume seller workflows</strong> to identify which interaction patterns appeared most frequently. Across hundreds of use cases, the dominant types reduced to a manageable set:</p>
-        <div class="finding-list">
-          <div class="finding-row">
-            <span class="finding-num">01.</span>
-            <div class="finding-body"><p><strong>Input fields</strong> — free-text or structured entry for identifiers, descriptions, and context</p></div>
-          </div>
-          <div class="finding-row">
-            <span class="finding-num">02.</span>
-            <div class="finding-body"><p><strong>Radio buttons &amp; dropdowns</strong> — single-selection from a known option set</p></div>
-          </div>
-          <div class="finding-row">
-            <span class="finding-num">03.</span>
-            <div class="finding-body"><p><strong>Modal selections</strong> — multi-step confirmation dialogs for high-stakes or irreversible actions</p></div>
-          </div>
-          <div class="finding-row">
-            <span class="finding-num">04.</span>
-            <div class="finding-body"><p><strong>Status displays</strong> — read-only inline summaries of system state (case progress, resolution status)</p></div>
-          </div>
-        </div>
-        <p style="margin-top: 24px">These patterns became the foundation of a <strong>component library</strong> — a shared design and engineering resource that could be composed to represent any legacy workflow without requiring net-new design work.</p>
-      </div>
-
-      <div class="flow-diagram">
-        <a class="lightbox-trigger" href="assets/images/Project2_Challenge3_ComponentLibrary.jpg" data-type="image">
-          <img src="assets/images/Project2_Challenge3_ComponentLibrary.jpg" alt="Component library — inline interaction patterns" />
-        </a>
-      </div>
-
-      <div class="strategic-card read">
-        <p class="strategic-eyebrow">The Trade-off</p>
-        <h4 class="strategic-title">Ideal Vision vs. Phase 1 Reality</h4>
-        <div class="strategic-rows">
-          <div class="strategic-row">
-            <span class="strategic-label">The Ideal</span>
-            <p class="strategic-text">The long-term vision required breaking down all workflows into <strong>atomic, composable components</strong> — each action a discrete unit that the assistant could chain in any order. This would have produced the most elegant experience, fully native to the conversational format.</p>
-          </div>
           <div class="strategic-row">
             <span class="strategic-label">The Constraint</span>
-            <p class="strategic-text">Atomic decomposition requires <strong>significant engineering time</strong> — rebuilding each legacy workflow from scratch rather than migrating existing logic. This was not feasible within the Phase 1 timeline.</p>
+            <p class="strategic-text">Implementing the full design required significant development resources. Working with the product team, we scoped phase zero down to a minimal viable version that excluded all sixty-seven self-service workflows and most inline interactive components.</p>
           </div>
           <div class="strategic-row">
-            <span class="strategic-label">The Decision</span>
-            <p class="strategic-text">In Phase 1, complex workflows launch via <strong>additional side panels</strong> rather than fully inline flows — less elegant, but it meets the core migration requirement and preserves the seller experience without delays. Inline decomposition rolls out progressively in later phases.</p>
+            <span class="strategic-label">The Result</span>
+            <p class="strategic-text">An almost entirely <strong>text-based conversational experience</strong> — far from the modular, interactive vision, but a deployable starting point to gather real-world signal.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── 05 Outcome ── -->
-    <section class="section" id="outcome">
+    <!-- ── 04 Validation ── -->
+    <section class="section alt" id="validation">
       <header class="sec-head">
         <div class="sec-rule"></div>
-        <div class="idx">05 / 06</div>
-        <h2>Outcome</h2>
-        <p class="sub">Validated approach — impact tracking in progress.</p>
+        <div class="idx">04 / 07</div>
+        <h2>Validation</h2>
       </header>
 
       <div class="block read">
-        <p>Early launch testing confirmed the core design bet: <strong>abandonment rates doubled</strong> when the assistant used verbose conversational flows instead of structured inline components — providing clear evidence that the inline interaction pattern was the right architectural direction for seller-facing AI workflows.</p>
-        <p style="margin-top: 20px">The full impact on seller adoption and task completion is currently being measured as the migration scales across more workflows.</p>
+        <p>I partnered with a UX researcher to validate this scoped-down version through seller interviews, comparing the text-based and interactive experiences.</p>
+        <p style="margin-top:20px">Key findings:</p>
+        <ul class="prose-list" style="margin-top:12px">
+          <li>Sellers preferred the interactive units and flagged efficiency — fewer turns, click instead of type — as a clear improvement area</li>
+          <li>However, satisfaction scores remained comparable between both experiences</li>
+        </ul>
       </div>
 
-      <div class="stats-row wrap">
-        <div class="stat">
-          <div class="n">2×</div>
-          <div class="l">abandonment rate with verbose conversational flows — validating the inline interaction pattern</div>
+      <div class="block read">
+        <div class="quote-stack">
+          <blockquote class="inline-quote">
+            <p>"It would have been easier if you could see the options or key information needed in one go and easily select the answers instead of having to type them out."</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
         </div>
-        <div class="stat">
-          <div class="n">10+</div>
-          <div class="l">legacy feature categories mapped and migrated to the AI assistant panel</div>
-        </div>
-        <div class="stat">
-          <div class="n">4</div>
-          <div class="l">core interaction pattern types that cover the full breadth of Seller Central's workflow surface</div>
-        </div>
+      </div>
+
+      <div class="block read">
+        <p>While sellers preferred the interactive experience, the comparable satisfaction scores gave us confidence that the text-based version was an acceptable starting point given our constraints.</p>
       </div>
     </section>
 
-    <!-- ── 06 Reflections ── -->
-    <section class="section alt" id="reflections">
+    <!-- ── 05 Phase 0 Design ── -->
+    <section class="section" id="phase-0">
       <header class="sec-head">
         <div class="sec-rule"></div>
-        <div class="idx">06 / 06</div>
-        <h2>Reflections</h2>
-        <p class="sub">What a large-scale AI migration taught me about pragmatic design.</p>
+        <div class="idx">05 / 07</div>
+        <h2>Phase 0 Design</h2>
       </header>
 
-      <ul class="steps-list">
-        <li>
-          <span class="k">01.</span>
-          <span>
-            <span class="t">Phased Delivery Is a Design Decision</span>
-            <span class="d">Large-scale migrations require accepting a gap between the ideal vision and Phase 1 reality. Designing that gap deliberately — with a clear rationale and a path forward — is more valuable than holding out for perfection. The component library gave the team a shared blueprint so phased delivery felt intentional, not compromised.</span>
-          </span>
-        </li>
-        <li>
-          <span class="k">02.</span>
-          <span>
-            <span class="t">Data Beats Assumptions About Conversational AI</span>
-            <span class="d">Going in, the assumption was that a more conversational, explanatory AI would feel more natural. Early launch data said the opposite — structure outperformed narrative for task-oriented sellers. The willingness to collect early signal and redesign around it, rather than defend the original direction, was what made the difference.</span>
-          </span>
-        </li>
-        <li>
-          <span class="k">03.</span>
-          <span>
-            <span class="t">Systems Thinking Scales Better Than Features</span>
-            <span class="d">Designing individual screens for individual workflows would have been fast in the short term and impossible to maintain at scale. Investing the time to extract patterns and build a shared component library created a durable foundation — one that made future feature migration a matter of assembly, not repeated bespoke design work.</span>
-          </span>
-        </li>
-      </ul>
+      <div class="flow-diagram">
+        <div style="border:1px solid var(--rule); border-radius:8px; overflow:hidden;">
+          <a class="lightbox-trigger" href="assets/images/Project2_Cha2_Phase0Design.mov" data-type="video">
+            <video src="assets/images/Project2_Cha2_Phase0Design.mov" autoplay loop muted playsinline style="width:100%; display:block;"></video>
+          </a>
+        </div>
+        <p class="ba-label" style="text-align:center; margin-top:12px;">Phase 0 — the text-based conversational experience launched to gather real-world signal before building out the full interactive component system.</p>
+      </div>
+    </section>
+
+    <!-- ── 06 Impact ── -->
+    <section class="section alt" id="impact">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">06 / 07</div>
+        <h2>Impact</h2>
+      </header>
+
+      <div class="block read">
+        <p>The Phase 0 launch showed promising early signal alongside a critical problem that shaped the next phase.</p>
+      </div>
+
+      <div class="stats-row wrap" style="grid-template-columns: repeat(3, 1fr); max-width: 720px;">
+        <div class="stat">
+          <div class="n">$372K</div>
+          <div class="l">in annual savings from reduced support contacts</div>
+        </div>
+        <div class="stat">
+          <div class="n">1,100+</div>
+          <div class="l">weekly seller contacts eliminated</div>
+        </div>
+        <div class="stat">
+          <div class="n">+2%</div>
+          <div class="l">increase in seller satisfaction</div>
+        </div>
+      </div>
+
+      <div class="block read" style="margin-top:40px;">
+        <p>⚠️ However, case creation abandonment rate <strong>doubled</strong> — a lengthy 4–5 turn back-and-forth made the text-based experience too inefficient to sustain at scale.</p>
+      </div>
+
+      <div class="block read">
+        <div class="quote-stack">
+          <blockquote class="inline-quote">
+            <p>"How can I get back to the prior Seller Support Landing page? Chatting with you took exponentially longer than the prior setup!"</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
+          <blockquote class="inline-quote">
+            <p>"ALWASS USE ****@***.com - why do I have to keep telling you this? (referring to preferred contact method and the required information)"</p>
+            <cite>— Amazon Seller</cite>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="block read">
+        <p>The abandonment data confirmed what sellers flagged in research — the text-based experience was too inefficient to sustain. This became the foundation for the next phase.</p>
+      </div>
+
+      <div class="block read">
+        <h3>Next Steps</h3>
+        <ol style="padding-left:24px; margin-top:12px; line-height:1.8;">
+          <li>Integrate all sixty-seven self-service workflows</li>
+          <li>Build the inline interactive units to reduce back-and-forth and drive down abandonment rates</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── 07 Reflection ── -->
+    <section class="section" id="reflections">
+      <header class="sec-head">
+        <div class="sec-rule"></div>
+        <div class="idx">07 / 07</div>
+        <h2>Reflection</h2>
+      </header>
+
+      <div class="block read">
+        <p><strong>Good UX judgment means distinguishing necessary changes from nice-to-haves.</strong> Some battles are worth fighting — like pushing back on stakeholders to customize landing topics toward support-relevant content, backed by research. Others are better validated in production than debated upfront.</p>
+      </div>
     </section>
 
   </main>
@@ -360,11 +314,12 @@
   <aside class="float-nav" id="floatNav" aria-label="Section navigation">
     <ul>
       <li><a href="#problem" data-target="problem"><span class="num">01</span> Problem</a></li>
-      <li><a href="#challenge-1" data-target="challenge-1"><span class="num">02</span> Space</a></li>
-      <li><a href="#challenge-2" data-target="challenge-2"><span class="num">03</span> Workflows</a></li>
-      <li><a href="#challenge-3" data-target="challenge-3"><span class="num">04</span> Scale</a></li>
-      <li><a href="#outcome" data-target="outcome"><span class="num">05</span> Outcome</a></li>
-      <li><a href="#reflections" data-target="reflections"><span class="num">06</span> Reflections</a></li>
+      <li><a href="#challenge-1" data-target="challenge-1"><span class="num">02</span> Challenge 1</a></li>
+      <li><a href="#challenge-2" data-target="challenge-2"><span class="num">03</span> Challenge 2</a></li>
+      <li><a href="#validation" data-target="validation"><span class="num">04</span> Validation</a></li>
+      <li><a href="#phase-0" data-target="phase-0"><span class="num">05</span> Phase 0 Design</a></li>
+      <li><a href="#impact" data-target="impact"><span class="num">06</span> Impact</a></li>
+      <li><a href="#reflections" data-target="reflections"><span class="num">07</span> Reflection</a></li>
       <li class="fn-sep" aria-hidden="true"></li>
       <li>
         <button class="fn-top" id="toTop" aria-label="Back to top">
@@ -384,14 +339,14 @@
         <div class="foot-title">AI-Assisted Support Funnels @Amazon</div>
       </a>
       <a class="foot-home" href="index.html">
-        <div class="glyph">Zw</div>
-        <div class="lbl">All Work</div>
+        <div class="glyph"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;"><path d="M3 9l9-7 9 7v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></div>
+        <div class="lbl">Home</div>
       </a>
-      <a class="foot-card next" href="project-p2.html">
+      <div class="foot-card next" style="opacity:0.45; cursor:default; pointer-events:none;">
         <div class="foot-label">Next <span class="arrow">→</span></div>
         <div class="thumb" style="background-image:url(assets/images/screen-p2.jpg);background-size:cover;background-position:top center;"></div>
-        <div class="foot-title">Unifying AI Tools for Complex Support Cases @Amazon</div>
-      </a>
+        <div class="foot-title">Unifying AI Tools for Complex Support Cases @Amazon <span style="font-size:0.8em; font-weight:400;">(Coming soon)</span></div>
+      </div>
     </div>
   </footer>
 
@@ -430,7 +385,7 @@
       var nav      = document.getElementById('topnav');
       var floatNav = document.getElementById('floatNav');
       var hero     = document.getElementById('hero');
-      var sections = ['problem','challenge-1','challenge-2','challenge-3','outcome','reflections']
+      var sections = ['problem','challenge-1','challenge-2','validation','phase-0','impact','reflections']
                        .map(function(id){ return document.getElementById(id); });
       var links    = Array.from(floatNav.querySelectorAll('a[data-target]'));
 

@@ -33,26 +33,26 @@
 /* ——— data ——— */
 const PROJECTS = [
   { id:0, title:"AI-Assisted Support Funnels @Amazon",
-    tags:"#Complex workflow  #Building trust with AI  #Business Impact",
-    role:"Lead UX Designer",
+    tags:"#Building trust with AI  #Business Impact #Complex workflows",
+    role:"Sole UX Designer, UX researcher",
     desc:"Designed guided interaction patterns that turned low-signal seller inputs into high-quality data for Applied Science models, delivering $8.7M in annual savings.",
-    high:"#Complex workflow  #Building trust with AI  #Business Impact",
-    panel:"rgb(242,247,248)", hl:"rgba(226,242,245,1)", ink:"rgb(71,121,157)",
-    texture:"b1", screen:"assets/images/screen-p0.png", scroll:0, link:"View Details  →", url:"project-p0.html" },
+    high:"#Building trust with AI  #Business Impact #Complex workflows",
+    panel:"rgb(246,241,238)", hl:"rgba(246,241,238,1)", ink:"rgb(152,74,35)",
+    texture:"b4", screen:"assets/images/screen-p0.png", scroll:0, link:"View Details  →", url:"project-p0.html" },
   { id:1, title:"Agentic Support Assistant @Amazon",
     tags:"#Conversational AI  #Minimum Lovable Experience",
-    role:"Lead UX Designer",
-    desc:"Architected long-term inline seller interactions and defined the “Minimum Lovable Experience” (MLE) for a 4-phased launch, transforming legacy support into an integrated multi-agent assistant.",
+    role:"Sole UX Designer",
+    desc:"Set the quality bar and inline interaction architecture for evolving legacy support into an integrated multi-agent assistant — defining what 'good enough to ship' truly means at each phase.",
     high:"#Conversational AI  #Minimum Lovable Experience",
     panel:"rgb(238,239,246)", hl:"rgba(226,228,243,1)", ink:"rgb(84,71,157)",
     texture:"b2", screen:"assets/images/screen-p1.jpg", scroll:0, link:"View Details  →", url:"project-p1.html" },
   { id:2, title:"Unifying AI Tools for Complex Support Cases @Amazon",
     tags:"#Complex workflows  #Rapid AI Prototyping",
-    role:"Lead UX Designer",
+    role:"Sole UX Designer, UX researcher",
     desc:"Streamlined 5+ widgets into a unified flow to boost seller support productivity, using AI prototyping to accelerate concept exploration and validation.",
     high:"#Complex workflows  #Rapid AI Prototyping",
     panel:"rgb(246,238,243)", hl:"rgba(243,226,235,1)", ink:"rgb(157,71,90)",
-    texture:"b3", screen:"assets/images/screen-p2.jpg", scroll:0, link:"View Details  →", url:"project-p2.html" },
+    texture:"b3", screen:"assets/images/screen-p2.jpg", scroll:0, link:"View Details  →", comingSoon:true },
 ];
 const SECRET = {
   id:4, title:"0-to-1 Market Validation",
@@ -105,7 +105,7 @@ if (mStack){
         <p class="m-desc">${p.desc || ''}</p>
         <div class="m-row"><b>My role</b><span>${p.role}</span></div>
         <div class="m-row"><b>Highlights</b><span>${p.high}</span></div>
-        <a href="#" class="m-view">${p.link}</a>
+        <a href="#" class="m-view"${p.comingSoon ? ' style="pointer-events:none;opacity:.45;cursor:default"' : ''}>${p.link}${p.comingSoon ? '&nbsp;&nbsp;(Coming soon)' : ''}</a>
       </div>`;
     mStack.appendChild(card);
   });
@@ -148,11 +148,15 @@ function select(id){
   dDesc.textContent  = data.desc || '';
   dRole.textContent  = data.role;
   dHigh.textContent  = data.high;
-  dLink.textContent  = data.link;
+  const soon = !!data.comingSoon;
+  dLink.textContent  = data.link + (soon ? '  (Coming soon)' : '');
   dLink.style.color  = tint(data.ink);
   dLink.href         = data.url || '#';
   dLink.target       = data.external ? '_blank' : '_self';
   dLink.rel          = data.external ? 'noopener noreferrer' : '';
+  dLink.style.pointerEvents = soon ? 'none' : '';
+  dLink.style.opacity       = soon ? '0.45' : '';
+  dLink.style.cursor        = soon ? 'default' : '';
 
   if (id !== 4){
     if (scrollerImg && data.screen) scrollerImg.src = data.screen;
