@@ -1,0 +1,87 @@
+/* ── reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #e8e8e6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── top chrome bar ── */
+.proto-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 44px;
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 16px;
+  z-index: 999;
+  font-size: 13px;
+}
+.proto-back {
+  color: #aaa;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.proto-back:hover { color: #fff; }
+.proto-title {
+  font-weight: 600;
+  flex: 1;
+}
+.proto-state {
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* ── canvas ── */
+.canvas {
+  margin-top: 44px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* ── frames ── */
+.frame {
+  display: none;
+  background: #fff;
+  border-radius: 12px;
+  padding: 48px;
+  width: 1280px;
+  max-width: 100%;
+  min-height: 720px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.12);
+}
+.frame.active { display: block; }
+
+/* ── placeholder styles (remove when filling in real designs) ── */
+.frame h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+.frame p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+.btn:hover { background: #333; }

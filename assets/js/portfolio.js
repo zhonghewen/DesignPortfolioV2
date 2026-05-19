@@ -49,7 +49,7 @@ const PROJECTS = [
     desc:"Set the quality bar and inline interaction architecture for evolving legacy support into an integrated multi-agent assistant — defining what 'good enough to ship' truly means at each phase.",
     high:"#Conversational AI  #Minimum Lovable Experience",
     panel:"rgb(238,239,246)", hl:"rgba(226,228,243,1)", ink:"rgb(84,71,157)",
-    texture:"b2", screen:"assets/images/screen-p1.jpg", scroll:0, link:"View Details  →", url:"project-p1.html" },
+    texture:"b2", screen:"assets/images/screen-p1.mov", scroll:0, link:"View Details  →", url:"project-p1.html" },
   { id:2, title:"Unifying AI Tools for Complex Support Cases @Amazon",
     tags:"#Complex workflows  #Rapid AI Prototyping",
     role:"Sole UX Designer, UX researcher",
@@ -88,6 +88,14 @@ sList.appendChild(sEl);
 sEl.addEventListener('mouseenter', () => select(SECRET.id));
 sEl.addEventListener('click', () => select(SECRET.id, true));
 
+function isVideo(src){ return /\.(mov|mp4|webm)$/i.test(src || ''); }
+function screenEl(src){
+  const s = src || 'assets/images/screen-1.png';
+  return isVideo(s)
+    ? `<video src="${s}" autoplay loop muted playsinline style="width:100%;height:100%;display:block;object-fit:cover"></video>`
+    : `<img src="${s}" alt="" />`;
+}
+
 /* ——— mobile stacked cards ——— */
 const mStack = document.getElementById('mobile-stack');
 if (mStack){
@@ -102,7 +110,7 @@ if (mStack){
       <div class="m-preview b${isSecret ? 's' : p.id+1}">
         ${isSecret
           ? `<div class="m-photo"></div>`
-          : `<div class="m-imac"><div class="m-screen"><img src="${p.screen || 'assets/images/screen-1.png'}" alt="" /></div></div>`}
+          : `<div class="m-imac"><div class="m-screen">${screenEl(p.screen)}</div></div>`}
       </div>
       <div class="m-body">
         <h3>${p.title}</h3>
@@ -119,7 +127,13 @@ if (mStack){
 const panel   = document.getElementById('panel');
 const texture = document.getElementById('texture');
 const scroller= document.getElementById('scroller');
-const scrollerImg = scroller?.querySelector('img');
+function updateScroller(src){
+  if (!scroller) return;
+  const s = src || 'assets/images/screen-1.png';
+  scroller.innerHTML = isVideo(s)
+    ? `<video src="${s}" autoplay loop muted playsinline style="width:100%;height:100%;display:block;object-fit:cover"></video>`
+    : `<img src="${s}" alt="Project preview" />`;
+}
 const right   = document.getElementById('right');
 const dTitle  = document.getElementById('d-title');
 const dRole   = document.getElementById('d-role');
@@ -163,7 +177,7 @@ function select(id){
   dLink.style.cursor        = soon ? 'default' : '';
 
   if (id !== 4){
-    if (scrollerImg && data.screen) scrollerImg.src = data.screen;
+    if (data.screen) updateScroller(data.screen);
     if (typeof data.scroll === 'number') scroller.style.transform = `translateY(${data.scroll}px)`;
   }
 }

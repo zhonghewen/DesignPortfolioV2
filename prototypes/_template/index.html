@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Prototype — Name</title>
+  <meta name="viewport" content="width=1440" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ── Prototype chrome (top bar) ── -->
+  <div class="proto-bar">
+    <a class="proto-back" href="../index.html">← All Prototypes</a>
+    <span class="proto-title">Prototype Name</span>
+    <span class="proto-state" id="state-label">Frame 1</span>
+  </div>
+
+  <!-- ── Prototype canvas ── -->
+  <main class="canvas" id="canvas">
+
+    <!-- FRAME 1 — replace content with your design -->
+    <div class="frame active" id="f1">
+      <h2>Frame 1</h2>
+      <p>Replace this with your Figma-exported or hand-built screen.</p>
+      <button class="btn" onclick="goto('f2')">Next →</button>
+    </div>
+
+    <!-- FRAME 2 -->
+    <div class="frame" id="f2">
+      <h2>Frame 2</h2>
+      <p>Second screen / state.</p>
+      <button class="btn" onclick="goto('f1')">← Back</button>
+    </div>
+
+    <!-- Add more frames as needed -->
+
+  </main>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
