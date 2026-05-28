@@ -36,11 +36,11 @@
 
 /* ——— data ——— */
 const PROJECTS = [
-  { id:0, title:"AI-Assisted Support Funnels @Amazon",
-    tags:"#Building trust with AI  #Business Impact #Complex workflows",
+  { id:0, title:"AI-Enhanced Seller Triage @Amazon",
+    tags:"#Applied Science collab  #Signal quality  #$8.7M impact",
     role:"Sole UX Designer, UX researcher",
-    desc:"Designed guided interaction patterns that turned low-signal seller inputs into high-quality data for Applied Science models, delivering $8.7M in annual savings.",
-    high:"#Building trust with AI  #Business Impact #Complex workflows",
+    desc:"Designed AI-guided interactions that walk Amazon sellers through structured issue triage — leading them to clarify intent, surface key data, and resolve issues through self-service automation — improving signal quality for Applied Science models and delivering $8.7M in annual savings.",
+    high:"Identified AI opportunities via LLM exploration; validated with a working AI prototype.",
     panel:"rgb(246,241,238)", hl:"rgba(246,241,238,1)", ink:"rgb(152,74,35)",
     texture:"b4", screen:"assets/images/screen-p0.png", scroll:0, link:"View Details  →", url:"project-p0.html" },
   { id:1, title:"Agentic Support Assistant @Amazon",
