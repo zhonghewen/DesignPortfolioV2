@@ -192,6 +192,34 @@ function tint(rgb, isPanel){
 
 select(0);
 
+/* ——— scroll / swipe navigation ——— */
+(function(){
+  const SEQ = [0, 1, 2, 4];
+  let locked = false;
+
+  function step(dir){
+    if (locked) return;
+    locked = true;
+    setTimeout(() => locked = false, 700);
+    const i = SEQ.indexOf(active);
+    const next = SEQ[(i + dir + SEQ.length) % SEQ.length];
+    select(next);
+  }
+
+  /* mouse wheel + trackpad */
+  window.addEventListener('wheel', function(e){
+    step(e.deltaY > 0 ? 1 : -1);
+  }, { passive: true });
+
+  /* touch swipe (iPad / mobile) */
+  let touchY = 0;
+  window.addEventListener('touchstart', function(e){ touchY = e.touches[0].clientY; }, { passive: true });
+  window.addEventListener('touchend',   function(e){
+    const dy = touchY - e.changedTouches[0].clientY;
+    if (Math.abs(dy) > 30) step(dy > 0 ? 1 : -1);
+  }, { passive: true });
+})();
+
 /* ——— subtitle typing animation ——— */
 (function typeSubtitle(){
   const full   = "Designing complex enterprise workflow and high-stakes AI interaction patterns.";
