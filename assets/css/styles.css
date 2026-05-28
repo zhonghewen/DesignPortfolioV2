@@ -143,7 +143,7 @@ body{ display:flex; justify-content:center; }
 /* ——— work section ——— */
 .work{ position:relative; display:flex; flex-direction:column; gap:20px; width:100%; max-width:672px; }
 .section-h{
-  font-weight:900;
+  font-weight:800;
   font-size:15px; letter-spacing:.08em; text-transform:uppercase;
   color:var(--ink); margin:0 0 14px;
 }
@@ -169,8 +169,8 @@ body{ display:flex; justify-content:center; }
   to  { transform:translateY(-50%) scaleX(1); }
 }
 .item.active{ color:var(--hl-ink, rgb(71,121,157)); font-weight:600; font-size:14px; }
-.item .hash{ font-size:12px; opacity:.85; }
-.item.active .hash{ font-size:12px; font-weight:500; opacity:1; }
+.item .hash{ font-size:13px; opacity:.85; }
+.item.active .hash{ font-size:13px; font-weight:500; opacity:1; }
 .item:hover{ color:var(--hl-ink, rgb(71,121,157)); }
 
 .actions{ display:flex; gap:12px; margin-top:8px; }
@@ -292,21 +292,21 @@ font-size:10px; color:#3a2f12;
   margin:0 0 14px; letter-spacing:.02em; text-transform:uppercase;
 }
 .details .desc{
-  font-size:12px;
+  font-size:14px;
   line-height:1.75; color:var(--ink);
   margin:0 0 14px; letter-spacing:.01em;
 }
 .details .row{
-  font-size:13px; line-height:1.5;
+  font-size:14px; line-height:1.5;
   color:var(--ink); margin-bottom:2px;
 }
 .details .row b{
   font-weight:700; color:#222; letter-spacing:.02em;
-  font-size:12px; text-transform:uppercase; margin-right:6px;
+  font-size:14px; text-transform:uppercase; margin-right:6px;
 }
 .details a.view{
   display:inline-block; margin-top:18px;
-  font-size:15px;
+  font-size:14px; font-weight:800; text-transform:uppercase;
   color:var(--hl-ink, rgb(71,121,157)); text-decoration:none;
   border-bottom:1px solid currentColor; padding-bottom:2px;
   transition:opacity .2s ease, transform .2s ease;
